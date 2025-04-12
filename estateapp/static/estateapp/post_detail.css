@@ -1,0 +1,355 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+.logo span{
+    font-size: 20px;
+}
+  
+.nav-links li a{
+    text-decoration: none;
+    color: orangered;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+ 
+}
+.nav-links{
+    margin-left: 60px;
+}
+.register-btn{
+    background: #fff;
+    color:#000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+   
+}
+.container{
+    padding: 0 7%;
+}
+#navBar{
+    background:  linear-gradient(to right, aqua, violet);
+}
+.house-details{
+    padding: 0 12%;
+}
+.house-title{
+    margin-top: 50px;
+}
+.house-title h2{
+    font-weight: 600;
+    padding-left: 10px;
+}
+.house-title .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+} 
+i{
+    color: orangered;
+    font-size: 18px;
+}
+.house-title span{
+    margin: 0 20px;
+}
+.house-title i{
+    color: orangered;
+    font-size: 14px;
+}
+.gallery{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 'first first . .' 'first first . .'; 
+    margin: 20px 0;
+}
+.gallery div img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.gallery .gal img{
+    height: 185px;
+}
+.gallery-img-1{
+    grid-area: first;
+    position: relative;
+    width: 550px;
+    
+}
+.gallery-img-1 img{
+    height: 380px;
+    
+}
+.text-content {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    padding: 10px;
+    background:  linear-gradient(to right, aqua, brown);
+    color: white;
+    font-size: 20px;
+    border-radius: 0 0 20% 0;
+  }
+.small-details h2{
+    font-weight: 800;
+}
+.small-details h4{
+      text-align: right;
+      font-size: 22px;
+}
+.line{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    max-width: 800px;
+    margin: 20px 0 50px;
+}
+.check-form{
+    margin: 30px 0;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 50px;
+}
+.check-form label{
+    display: block;
+}
+
+.check-form  a{
+    background: #ff0000;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 18px;
+    width: 330px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 740px;
+    cursor: pointer;
+    margin-top: -40px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+.guest-field{
+    flex: 1;
+}
+.location-input{
+    flex: 1;
+} 
+.search-bar form label{
+    font-weight: 600;
+}
+.line{
+    width: 100%;
+}
+.details-list{
+    list-style: none;
+    margin: 50px 0;
+}
+.details-list li{
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #555;
+    position: relative;
+}
+.details-list li span{
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+}
+.details-list li i{
+    position: absolute;
+    top: 5px;
+    left: -40px;
+}
+.home-desc{
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+.desc{
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.emoji{
+    color: #FF0000;
+    font-size: 13px;
+}
+.map{
+    margin: 50px 0;
+}
+.map h3{
+    font-size: 26px;
+    font-weight: 500;
+    margin: 30px;
+}
+.map b{
+    display: block;
+    margin-bottom: 16px;
+}
+.map iframe{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.host{
+    display: flex;
+    align-items: center;
+}
+.host img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+.host h2{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.host i{
+    color: orangered;
+}
+.contact-host{
+    display: inline-block;
+    margin: 40px 0 40px 120px;
+    text-decoration: none;
+    color: #555;
+    padding: 15px 50px;
+    border: 1px solid orangered;
+    border-radius: 8px;
+}
+.footer{
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: #999;
+    font-size: 22px;
+    margin: 0 10px;
+}
+.footer hr{
+    background: #999;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+}
+.footer p{
+    padding-bottom: 15px;
+}
+.footer .fab.fa-facebook-f{
+    color:  #3b5998;
+}
+.footer .fab.fa-twitter{
+    color: #00acee;
+}
+.footer .fab.fa-instagram{
+    color: #fb3958;
+}
+.footer .fab.fa-youtube{
+    color:  #FF0000;
+}
+.footer .fab.fa-linkedin-in{
+  color: #0e76a8;    
+}
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+nav .fa-bars{
+    display: none;
+}
+.space-row{
+    display: inline-flex;
+}
+.space-1{
+    margin-right: 70px;
+}
+.space-1 h2{
+    font-size: 19px;
+}
+.space-1 p{
+    font-size: 14px;
+    text-align: center;
+}
+/*------media query for house details page------*/
+@media only screen and (max-width: 700px){
+    .house-details{
+        margin-top: 150px;
+    }
+    .row p{
+        margin-top: 10px;
+    }
+    .gallery{
+        grid-template-areas: 'first first' '. .' '. .';
+    }
+    .small-details h2{
+          font-size: 20px;
+          margin-top: 24px;
+    }
+    .small-details h4{
+         text-align: left;
+         margin: 10px 0;
+         font-size: 18px;
+    }
+    .check-form{
+        padding: 10px 30px;
+    }
+    .check-form div {
+       padding: 20px 0;
+       width: 100%;       
+    }
+    .check-form input {
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .check-form button{
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+     .host{
+         display: block;
+         line-height: 28px;
+     }
+     .contact-host{
+         margin: 40px 0;
+     }
+
+}
+ 

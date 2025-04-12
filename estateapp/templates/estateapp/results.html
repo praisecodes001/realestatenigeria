@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale =1.0">
+     <title>Real Estate Nigeria | Listings</title>
+     <link rel="stylesheet" href="{% static 'estateapp/listings.css'%}">
+     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+     <link rel="manifest" href="favicon_io/site.webmanifest">
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav id="navBar" class="navbar-white"  style="background: linear-gradient(to left, aqua , brown); ">
+            <label class="logo">Real Estate Nigeria <span>(REN)</span></label>
+            <ul class="nav-links">
+                <li><a href="/home/" class="">Home</a></li>
+                <li><a href="/Listings.html/" class="active">Listings</a></li>
+                <li><a href="#" class="">Affiliate</a></li>
+                <li><a href="/contact/" class="">Contact Us </a></li>
+            </ul>
+            <i class="fas fa-bars" onclick="togglebtn()"></i>
+        </nav>
+        <div class="container">
+
+
+            <div class="list-container">
+                
+    <div class="left-col">
+        <a href="/Listings/">Refresh Page</a>
+        <p>{{ posts|length }} Options Found</p>
+        <h1>Top Listings</h1>
+
+        {% if posts %}
+            <h1>You searched for "{{ subtype }}, {{ area }}, {{ state }}, {{ category }}, {{ max_budget }}"</h1>
+
+            {% for post in posts %}
+                <div class="house">
+                    <div class="house-img">
+                        <img src="{{ post.thumb.url }}" alt="Image">
+                        <p class="text-content">{{ post.category }}</p>
+                    </div>
+
+                    <div class="house-info">
+                        <p>{{ post.title }}</p>
+                        <a href="{% url 'post-detail' post.id %}"><h3>{{ post.short }}</h3></a>
+                        <p>
+                            <i class="fa-solid fa-bed"></i> {{ post.bedroom }} Bedrooms 
+                            <i class="fa-solid fa-bath"></i> {{ post.bathroom }} Bathrooms  
+                            <i class="fa-solid fa-toilet"></i> {{ post.toilet }} Toilets
+                        </p>
+
+                        <div class="house-price">
+                            <h4>₦{{ post.currencyfield }}</h4>
+                            <div class="post-row">
+                                <h4>Posted By</h4>
+                                <h2>{{ post.author }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% else %}
+            <h1>No results found.</h1>
+        {% endif %}
+    </div>
+         
+                
+                     
+               <div class="right-col">
+                 <img src="{% static 'estateapp/image/Houses Everywhere and Anywhere!.png' %}" alt="">     
+              
+                    <h2 class="news">Join Our Newsletter</h2>
+                   <hr>
+                               <p>Connect with other clients from everypart of the conuntry</p>
+                      <button class="connect">Connect</button>
+                        <hr class="line2">      
+                     </div>
+         
+               <div class="pagination">
+                  <a href="#"><img src="image/arrow.png"></a>
+                   <span class="current">1</span>
+                   <span><a href="Listings.html">2</a></span>
+                   <span><a href="Listings.html">3</a></span>
+                   <span><a href="Listings.html">4</a></span>
+                   <span><a href="Listings.html">5</a></span>
+                   <span>&middot;&middot;&middot;&middot;</span>
+                   <span>20</span>
+                   <img src="image/arrow.png" class="right-arrow"> 
+               </div>
+                 </div>
+                 <div class="footer">
+                     <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                     <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                     <a href="https://Instagram.com/"><i class="fab fa-instagram"></i></a>
+                     <a href="https://youtube.com/"><i class="fab fa-youtube"></i></a>
+                     <a href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>  
+                     <hr>
+                     <p>Copyright <i class="fa-regular fa-copyright"></i> 2023,Real Estate Nigeria <span>(REN)</span></p> 
+                 </div>
+         
+         <script>
+                     var navBar=document.getElementById("navBar");
+                     function togglebtn(){
+                         navBar .classList.toggle("hidemenu");
+                     }
+         </script>
+         
+         
+         
+         
+             </body>
+             </html>

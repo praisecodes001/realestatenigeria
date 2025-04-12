@@ -1,0 +1,509 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+label.logo span{
+    font-size: 12px;
+    font-weight: 200;
+}
+nav#navBar.hidemenu.fa-bars:before{
+    display: none;
+}
+nav#navBar.fa-solid.fa-bars::before{
+    display: none;
+}
+i.fa-solid.fa-bars{
+    display: none;
+}
+.nav-links li{
+       list-style: none;
+       display: inline-block;
+       margin: 10px 30px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: orangered;
+}
+.container{
+    background-color: rgba(51, 24, 24, 0.089);
+    width: 40%;
+    margin-top: 4%;
+    margin-left: 400px;
+    border-radius: 15px;
+   
+    
+}
+img{
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+
+}
+.add{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+    height: 40px;
+    margin-bottom: 20px;
+   font-size: 20px;
+   background-color: gray;
+   outline: none;
+   border: none;
+
+}
+.add a{
+    text-decoration: none;
+    color: #fff;
+
+}
+.up-nav{
+    width: 100%;
+    
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.nav-1{
+    margin-left: 30px;
+}
+h2{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;  
+ }
+h2 span{
+     color: red;
+     
+ }
+.nav-2{
+    margin-right: 30px;
+}
+.bx.bx-menu-alt-left{
+     font-size: 50px;
+     color: cornsilk;
+     cursor: pointer;
+     display: none;
+
+}
+.bx.bxs-user-circle {
+    font-size: 50px;
+    color: cornsilk;
+    cursor: pointer;
+}
+.fa-solid.fa-circle-xmark{
+    font-size: 50px;
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    margin-left: 20px;
+   
+   
+}
+#drop{
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 160px;
+    height: 30vh;
+    margin-right: 20px;
+    margin-top: 140px;
+    z-index: 2;
+    transition: .5s;
+}
+#drop ul li{
+    margin-left: 10px;
+    padding: 5px;
+}
+#drop ul {
+  list-style-type: none;
+}
+.fa-solid.fa-circle{
+    font-size: 20px;
+    color: rgb(43, 255, 0);
+}
+#two{
+    font-size: 20px;
+    color: rgb(251, 255, 0); 
+}
+#three{
+    font-size: 20px;
+    color: rgb(255, 0, 0); 
+}
+.profile{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 20px;
+    width: 350px;
+    height: 76vh;
+    margin-right: 20px;
+    margin-top: 140px;
+    z-index: 2;
+    transition: .5s;
+
+}
+#profile-pic{
+    width: 160px;
+    height: 160px;
+    background-color: #000;
+    border: px solid  #000;
+    border-radius: 300px;
+    margin-left: 0px;
+    margin-top: 1px;
+}
+.house {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.house a{ 
+    text-decoration: none;
+    color: #000;
+}
+.house-img{
+    flex-basis: 40%;
+}
+.house-info{
+    flex-basis: 58%;
+    color: #555;
+}
+.house-img img{
+    width: 100%;
+    margin-left: -20px;
+    border-radius: 12px;
+    height: 250px;
+}
+
+.house-info a h3{
+    font-weight: 600;
+    color: #333;
+    font-size: 22px;
+    margin: 4px 0;
+    text-decoration: none;
+    margin-left: -20px;
+}
+.house-info i{
+    color: orangered;
+    margin: 10px 1px;
+    font-size: 18px;
+}.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+.house-price h4 i{
+    color: #000;
+    font-size: 15px;
+}
+.house-info ul li{
+        list-style: none;
+        display: inline-flex;
+        margin: 1px 9px;
+}
+.house-info ul li p{
+    padding-top: 11px;
+}
+#display_image{
+    width: 160px;
+    height: 160px;
+    border: px solid  #000;
+    border-radius: 300px;
+    background-size: cover;
+    margin-left: 90px;
+    margin-top: 30px;
+  }
+  label.label input[type="file"]{
+      position: absolute;
+      top: -1000px;
+  }
+  .label{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    margin-left: 20%;
+    background: linear-gradient(to right, aqua , brown);
+    display: inline-block;
+}
+.save-btn{
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 5%;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    background: linear-gradient(to left, aqua , brown);
+    cursor: pointer;
+
+}
+.profile ul li a {
+    text-decoration: none;
+    color: #000;
+  
+}
+.profile ul li {
+    font-size: 20px;
+    padding: 14px;
+    list-style-type: none;
+}
+.house {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.house a{ 
+    text-decoration: none;
+    color: #000;
+}
+.house-img{
+    flex-basis: 40%;
+}
+.house-info{
+    flex-basis: 58%;
+    color: #555;
+}
+.house-img img{
+    width: 100%;
+    margin-left: -20px;
+    border-radius: 12px;
+    height: 250px;
+}
+
+.house-info a h3{
+    font-weight: 600;
+    color: #333;
+    font-size: 22px;
+    margin: 4px 0;
+    text-decoration: none;
+    margin-left: -20px;
+}
+.house-info i{
+    color: orangered;
+    margin: 10px 1px;
+    font-size: 18px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(240, 8, 8);  
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(216, 27, 27); 
+    
+  }
+.notice-row p{
+    margin: 10px;
+}
+.fa-solid.fa-phone{
+    color: #0051ff;
+}
+.fa-brands.fa-telegram{
+    color: #0088CC;
+}
+.fa-brands.fa-instagram{
+    color: #F56040;
+}
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+.house-price h4 i{
+    color: #000;
+    font-size: 15px;
+}
+.house-info ul li{
+        list-style: none;
+        display: inline-flex;
+        margin: 1px 9px;
+}
+.house-info ul li p{
+    padding-top: 11px;
+}
+.connect{
+    width: 70%;
+    margin-top: 40px;
+    padding: 30px;
+    margin-left: 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(253, 0, 0);
+
+}
+.house-info i.fa-brands.fa-whatsapp {
+      color: #4FCE5D;
+      font-size: 20px;
+}
+.house-price h4 span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.sidebar{
+    border: 1px solid #999;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+.sidebar h2{
+    font-weight: 600;
+}
+.sidebar h3{
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-bottom: 10px;
+}
+.filter p{
+    flex: 1;
+}
+.filter input{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.sidebar-link {
+    text-align: right;
+    margin: 20px 0;
+}
+.sidebar-link a{
+    text-decoration: none;
+}
+.pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      width: 70%;
+}
+.pagination img{
+    width: 15px;
+    margin: 10px 20px;
+    cursor: pointer;
+
+}
+.right-arrow{
+    transform: rotate(180deg);
+    
+}
+@media only screen and (max-width: 700px){
+    .logo{
+        position: fixed;
+        top: 4%;
+        left: 7%;
+    }
+    nav{
+     position: fixed;
+     top: 0;
+     z-index: 100;
+     display: inline-block;
+     width: 100%;
+     padding: 100px 7% 0; 
+     text-align: right;
+     max-height: 100px;
+     overflow: hidden;
+     transition: max-height 0.5s;
+    }
+   
+    nav .nav-links li{
+       margin: 10px 0;
+       display: block;
+    }
+    nav .fa-solid.fa-bars{
+        display: block;
+        position: fixed;
+        top: 4%;
+        right: 7%;
+        color: #c51313;
+        font-size: 28px;
+        }
+        nav#navBar.fa-solid.fa-bars::before{
+            display: none;
+        }
+        .active::after{
+        left: -40%;
+        transform: translateX(0, 50%);
+        bottom: 50%;
+        }
+    
+        .hidemenu{
+            max-height: 300px;
+    
+        }
+        .header h1{
+            padding-top: 200px;
+            font-size: 7vw;
+        }
+        .up-nav{
+            background-color: #000;
+               margin-top: 31%;
+        }
+        .container{
+            margin-left: 1px;
+            width: 100%;
+            margin-top: 20%;
+           
+        }
+        .container img{
+            margin-left: 35px;
+        }
+        #drop{
+            height: 37vh;
+            margin-top: 50%;
+        }
+        .add{
+            width: 90%;
+            margin-left: 20px;
+        }
+}

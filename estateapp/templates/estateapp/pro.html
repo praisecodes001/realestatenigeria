@@ -1,0 +1,407 @@
+{% load static %}
+<!DOCTYPE html>
+<html> 
+       <head>
+     <meta name="viewport" content="width=device-width, initial-scale =1.0">
+     <title>Real Estate Nigeria | Add Property</title>
+    <link rel="stylesheet" href= "{% static 'estateapp/pro.css'%}">
+    <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    </head>   
+    <body>
+    <div class="header">  
+        <nav id b ="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, aqua , brown); ">
+          <label class="logo">Real Estate Nigeria<span>(REN)</span> </label>
+            <ul class="nav-links">
+                <li><a href="/home/" class="#">Home</a></li>
+                <li><a href="/Listings/" class="#">Listings</a></li>
+                <li><a href="/howitworks/" class="#">How it Works</a></li>
+                <li><a href="/contact/" class="#">Contact Us</a></li>
+            </ul>
+            <a href="{% url 'logout' %}" class="register-btn">Logout</a>
+            <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+        </nav>
+        <h1>Add Your Property!!</h1>
+    <div class="pro-con">
+        {% if user.is_authenticated %}
+    <!-- Form code -->
+{% else %}
+    <p>You need to <a href="{% url 'login' %}">log in</a> to create a post.</p>
+{% endif %}
+        <form action=""  onsubmit="return checkForBlank()" method="POST" enctype="multipart/form-data" >
+            {{form}}  
+            {% csrf_token %}
+            <div class="deal">
+                <div class="row" >
+                    <div class="col-2">
+                        <h5 for="subcim" >Title</h5>
+                        <input type="text" id="info" placeholder="E.g 5 Bedroom Detached Duplex" name="title" onkeyup="myFunctions()">
+                        <span class="error_form" id="ren_error_message"></span>
+                        <p id="punctuation"></p>
+                    </div> 
+                   
+                   <div class="dropdown">
+                    <h5>Category</h5>
+                       <select id="drop"  name="category">
+                              <option>For Rent</option>
+                              <option>For Sale</option>
+                              <option>Short-Let</option>
+                              
+                          </select>
+                       </div>
+                      
+                       </div>
+                       <div class="row">
+                        <div class="col-2">
+                            <h5>Type</h5>
+                           <select class="selle" id="select1"  name="building" onchange="disableSelect2()">    
+                                <option value="house"> House</option>
+                                <option id="land" value="land">Land</option>
+                                <option value="commercial property">Commercial Property</option>
+                                <option value="wareehouse">Warehouses</option>
+                                <option value="fuel stations">Fuel Stations</option>
+                                            
+                              </select>
+                        </div>
+            
+                       <div class="dropdown">
+                        <h5>Subtype</h5>
+                           <select id="select2" name="subtype">
+                                  <option>Duplexes</option>
+                                  <option>Block Of Flats</option>
+                                  <option>Detached Duplexes</option>
+                                  <option>Bungalow</option>
+                                  <option>Mini Flats</option>
+                                  <option>Semi detached Duplexes</option>
+                              </select>
+                           </div>
+                           </div>
+                           <div class="row">
+                            <div class="col-2">
+                                <h5>Area/Locality</h5>
+                                <input type="text" id="area" placeholder="E.g Lekki  " name="area">
+                        <span class="error_form" id="ren-area_error_message"></span>
+    
+                            </div>
+                
+                           <div class="dropdown">
+                            <h5>Bedrooms</h5>
+                               <select id="select3" name="bedroom">
+                                <option> 1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>6+</option>
+                                      
+                                  </select>
+                               </div>
+                               
+                       
+                              
+                               </div>
+                               <div class="row">
+                                <div class="col-2">
+                                    <h5>State</h5>
+                                    <input type="text" id="street" placeholder="E.g Lagos " name="state" >
+                                    <span class="error_form" id="ren-street_error_message" ></span>       
+                                </div>
+                               <div class="dropdown">
+                                <h5>Toilets</h5>
+                                   <select id="select4" name="toilet">    
+                                    <option> 1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>6+</option>
+                                          
+                                 </select>
+                                   </div>
+                    
+                                   </div>
+
+
+                                   <div class="row">
+                                    <div class="col-2">
+                                        <h5>Short-Description</h5>
+                                        <input type="text" id="short" placeholder="E.g 5 Bedroom Detached Duplex With a Bq for Rent "  maxlength="70" name="short">
+                                        <span class="error_form" id="ren-short_error_message" ></span>       
+                                    </div>
+                                   <div class="dropdown">
+                                    <h5>Bathrooms</h5>
+                                       <select id="select4" name="bathroom">    
+                                        <option> 1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>6+</option>
+                                              
+                                     </select>
+                                       </div>
+                        
+                                       </div>           
+        <hr>
+                                   <div class="row" id="second">
+                                    <div class="column">
+                                        <h5>Price</h5>
+                                       <input type="text" name="currencyfield" id="price"  placeholder="Amount">
+                                     <span class="error_form" id="ren_price-area_message"  ></span>
+                                     <span id="words"></span>
+                                            
+                                       
+                                        
+                                    </div>
+                                    <div class="column">
+                                        <h5 id="tots">Total Area</h5>
+                                        <input type="number"  id="total-area" name="totalarea" placeholder="Sqm">
+                                     <span class="error_form" id="ren_error-area_message"></span>
+    
+        
+                                    </div>
+                                    <div class="column">
+                                        <h5 id="tots">Covered Area</h5>
+                                        <input type="number" id="covered-area"  name="coveredarea" placeholder="Sqm">
+                                     <span class="error_form" id="ren_error-covered_message"></span>
+    
+                                    </div>
+                                  </div>
+                                  <div class="row" id="third">
+                                    <div class="column" id="avail">
+                                        <h5>Availability</h5>
+                                        <input type="text" id="info-1"   placeholder="Available,Occupied" name="availability">
+                                     <span class="error_form" id="ren avail_message"></span>
+                                        
+                                    </div>
+                                    <div class="column" id="col">
+                                        <h5>Add Google Map</h5>
+                                        <input type="url"  id="map" name="url" >
+                                     <span class="error_form" id="ren_map_message"></span>
+    
+                                    </div>
+                                  </div>
+                    
+                                 
+
+                               
+                       <div class="description">
+                       <h5>Description</h5>
+                 <textarea id="message" name="description" rows="2" placeholder="Description Of The Property"></textarea>
+                 <span class="error_form" id="ren_message"></span>
+    
+                   </div>
+                   </div>
+                   <div class="btn" onclick="showImages()">Done</div>
+                   <!-----------Images---------------->
+                   <div class="images" id="images">        
+                    <label class="label"> 
+                        <span>Select Images</span>
+                    </label>
+                      
+                    <div class="row-img">
+                        <div class="col-img" > 
+                              <div id="display_image"  ></div>
+                              <div class="select">
+                              <label class="label-thumb">
+                            <input type="file" name="thumb" id="thumb_input" accept="image/png, image/jpg, image/jpeg" >  
+                           <span>Select Thumbnail</span>
+                            </label>
+                            </div>
+                        </div>
+                    
+                      <div class="col-img" >
+                          <div id="display_image-1" ></div>
+                          <div class="select">
+                              <label class="label-thumb">
+                            <input type="file" name="image1" id="secondary_input" accept="image/png, image/jpg, image/jpeg" >  
+                            <span>Select Secondary Image</span>
+                    
+                            </label>
+                            </div>
+                      </div>
+                      <div class="col-img" >
+                          <div id="display_image-2"></div>
+                         <div class="select">
+                              <label class="label-thumb">
+                            <input type="file" name="image2" id="secondary_input_1" accept="image/png, image/jpg, image/jpeg" >  
+                            <span>Select Secondary Image</span>
+                            </label>
+                            </div>
+                      </div>
+                      <div class="col-img">
+                          <div id="display_image-3"></div>
+                          <div class="select">
+                            <label class="label-thumb">
+                          <input type="file" name="image3" id="secondary_input_2" accept="image/png, image/jpg, image/jpeg" >  
+                          <span>Select Secondary Image</span>
+                    
+                          </label>
+                          </div>
+                      </div>
+                          </div>
+                          
+                      <div class="row-img">
+                          <div class="col-img">
+                                <div id="display_image-4"></div>
+                                <div class="select">
+                                    <label class="label-thumb">
+                                  <input type="file" name="image4" id="secondary_input_3" accept="image/png, image/jpg, image/jpeg" >  
+                                  <span>Select Secondary Image</span>
+                    
+                                  </label>
+                                  </div>
+                        </div>
+                        <div class="col-img" >
+                            <div id="display_image-5" ></div>
+                            <div class="select">
+                                <label class="label-thumb">
+                              <input type="file" name="image5" id="secondary_input_4" accept="image/png, image/jpg, image/jpeg" >  
+                              <span>Select Secondary Image</span>
+                    
+                              </label>
+                              </div>
+                        </div>
+                        <div class="col-img">
+                            <div id="display_image-6"></div>
+                            <div class="select">
+                                <label class="label-thumb">
+                              <input type="file" name="image6" id="secondary_input_5" accept="image/png, image/jpg, image/jpeg" >  
+                              <span>Select Secondary Image</span>
+                    
+                              </label>
+                              </div>
+                        </div>
+                        <div class="col-img">
+                            <div id="display_image-7"></div>
+                            <div class="select">
+                                <label class="label-thumb">
+                              <input type="file" name="image7" id="secondary_input_6" accept="image/png, image/jpg, image/jpeg" >  
+                             <span>Select Secondary Image</span>
+                              </label>
+                              </div>
+                        </div>
+                            </div>
+                    
+                        </div>
+    <button type="submit" class="btn2"> Post &#859;</button>
+
+         </form>
+    </div>
+    </div>
+   
+<script src="{% static 'estateapp/script.js'%}"></script>
+<script src="{% static 'estateapp/thumb_script.js'%}"></script>
+
+
+<script>
+    function checkForBlank() {
+if(document.getElementById("info").value == "") {
+    document.getElementById("ren_error_message").textContent="Title required!";
+    
+}
+if(document.getElementById("short").value == ""){
+    document.getElementById("ren-short_error_message").textContent="Short-Description required!";
+  
+}
+if(document.getElementById("area").value == ""){
+    document.getElementById("ren-area_error_message").textContent="Area/Locality required!";
+  
+}
+if(document.getElementById("street").value == ""){
+    document.getElementById("ren-street_error_message").textContent="Street required!";
+  
+}
+if(document.getElementById("total-area").value == ""){
+    document.getElementById("ren_error-area_message").textContent="Total area required!";
+    
+}
+if(document.getElementById("covered-area").value == ""){
+    document.getElementById("ren_error-covered_message").textContent="Covered area required!";
+
+} 
+if(document.getElementById("map").value == ""){
+    document.getElementById("ren_map_message").textContent="Google map required!";
+
+}
+if(document.getElementById("info-1").value == ""){
+    document.getElementById("ren avail_message").textContent="Availability required!";
+
+}
+if(document.getElementById("price").value == ""){
+    document.getElementById("ren_price-area_message").textContent="Amount required!";
+
+}
+
+if(document.getElementById("message").value == ""){
+    document.getElementById("ren_message").textContent="Description required!";
+    return false;
+}
+
+}
+</script>
+
+<script>
+    function myFunctions() {
+      var x = document.getElementById("info").value;
+      var patt1 = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+      var result = x.match(patt1);
+      if(result) {
+        document.getElementById("punctuation").innerHTML = "Error! Punctuation marks detected.";
+      } else {
+        document.getElementById("punctuation").innerHTML = "";
+      }
+    }
+    </script>
+
+<script>
+    var fileInput = document.getElementById("image_input");
+    fileInput.value ="";
+</script>
+
+<script>
+    var fileInput = document.getElementById("thumb_input");
+    fileInput.value ="";
+</script>
+    <script>
+        function disableSelect2(){
+            var select1 = document.getElementById("select1");
+            var select2 = document.getElementById("select2");
+    
+
+            if (select1.value === "land"){
+                select2.disabled = true;
+                select3.disabled = true;
+                select4.disabled = true;
+
+            }else {
+              select2.disabled = false;
+              select3.disabled = false;
+              select4.disabled = false;
+  }         
+        }
+    </script>
+      <script>
+        var navBar=document.getElementById("navBar");
+        function togglebtn(){
+            navBar .classList.toggle("hidemenu");
+        }
+    </script>
+
+
+<script type='text/javascript'>
+    function showImages() {
+      document.getElementById('images').style.display = 'block';
+      document.querySelector('.btn').style.display = 'none';
+      document.querySelector('.btn2').style.display = 'inline-block';
+    }
+    </script>
+   
+</body>
+</html>

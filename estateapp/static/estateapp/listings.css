@@ -1,0 +1,445 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+label.logo span{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.left-col a{
+    font-size: 20px;
+    font-weight: 400;
+    float: right;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #3b5998;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: orangered;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+ 
+}
+.nav-links{
+    margin-left: 60px;
+}
+.register-btn{
+    background: #fff;
+    color:#000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+   
+}
+.container{
+    padding: 0 7%;
+}
+.list-container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.left-col{
+    flex-basis: 70%;
+}
+.right-col img{
+    width: 100%;
+
+}
+.right-col{
+    flex-basis: 25%; 
+    border: none;
+    height: 200vh;
+     width: 100%; 
+}
+.line2{
+    margin-top: 30%;
+}
+
+.text-content {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    padding: 10px;
+    background:  linear-gradient(to right, aqua, brown);
+    color: white;
+    font-size: 20px;
+    border-radius: 0 0 20% 0;
+  }
+.news{
+    width: 100%;
+    font-size: 25px;
+    margin-top: 50%;
+}
+.right-col p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.left-col h1{
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.post-row{
+    display: block;
+ 
+ }
+.post-row h2{
+    font-size: 20px;   
+}
+.house {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.house a{ 
+    text-decoration: none;
+    color: #000;
+}
+.house-img{
+    flex-basis: 40%;
+    position: relative;
+}
+.house-info{
+    flex-basis: 58%;
+    color: #555;
+}
+.house-img img{
+    width: 100%;
+    margin-left: -20px;
+    border-radius: 12px;
+    height: 250px;
+}
+
+.house-info a h3{
+    font-weight: 600;
+    color: #333;
+    font-size: 22px;
+    margin: 4px 0;
+    text-decoration: none;
+    margin-left: -20px;
+}
+.house-info i{
+    color: orangered;
+    margin: 10px 1px;
+    font-size: 18px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(240, 8, 8);  
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(216, 27, 27); 
+    
+  }
+.notice-row p{
+    margin: 10px;
+}
+.fa-solid.fa-phone{
+    color: #0051ff;
+}
+.fa-brands.fa-telegram{
+    color: #0088CC;
+}
+.fa-brands.fa-instagram{
+    color: #F56040;
+}
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+.house-price h4 i{
+    color: #000;
+    font-size: 15px;
+}
+.house-info ul li{
+        list-style: none;
+        display: inline-flex;
+        margin: 1px 9px;
+}
+.house-info ul li p{
+    padding-top: 11px;
+}
+.connect{
+    width: 70%;
+    margin-top: 40px;
+    padding: 30px;
+    margin-left: 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(253, 0, 0);
+
+}
+.house-info i.fa-brands.fa-whatsapp {
+      color: #4FCE5D;
+      font-size: 20px;
+}
+.house-price h4 span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.sidebar{
+    border: 1px solid #999;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+.sidebar h2{
+    font-weight: 600;
+}
+.sidebar h3{
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-bottom: 10px;
+}
+.filter p{
+    flex: 1;
+}
+.filter input{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.sidebar-link {
+    text-align: right;
+    margin: 20px 0;
+}
+.sidebar-link a{
+    text-decoration: none;
+}
+.pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      width: 70%;
+}
+.pagination img{
+    width: 15px;
+    margin: 10px 20px;
+    cursor: pointer;
+
+}
+.right-arrow{
+    transform: rotate(180deg);
+    
+}
+.pagination span{
+    margin: 10px 30px;
+    width: 30px;
+    height: 40px;
+    text-align: center;
+    border-radius: 15%;
+    cursor: pointer;
+    font-size: 27px;
+}
+.pagination span a{
+    text-decoration: none;
+    color: #000;
+}
+.pagination .current{
+    background: #ff0000;
+    color: #fff;
+}
+.footer{
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: #999;
+    font-size: 22px;
+    margin: 0 10px;
+}
+.footer hr{
+    background: #999;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+}
+.footer p{
+    padding-bottom: 15px;
+}
+.footer .fab.fa-facebook-f{
+    color:  #3b5998;
+}
+.footer .fab.fa-twitter{
+    color: #00acee;
+}
+.footer .fab.fa-instagram{
+    color: #fb3958;
+}
+.footer .fab.fa-youtube{
+    color:  #FF0000;
+}
+.footer .fab.fa-linkedin-in{
+  color: #0e76a8;    
+}
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+nav .fa-bars{
+    display: none;
+}
+
+/*------small screen for listing page------*/
+@media only screen and (max-width: 700px){
+    .list-container{
+        margin-top: 150px;
+    }
+    .left-col, .right-col, .house-img, .house-info{
+        flex-basis: 100%;
+    }
+    .left-col h1{
+        font-size: 22px;
+    }
+    .house-info h3{
+        font-size: 18px;
+    }
+    .house-info i{
+        font-size: 16px;
+    }
+    .pagination span{
+        margin: 10px 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+    .logo {
+        position: fixed;
+        top: 4%;
+        left: 7%;
+    }
+
+    nav{
+        
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 100px 7% 0;
+        text-align: right;
+        max-height: 100px;
+        overflow: hidden;
+        display: inline-block;
+        transition: max-height 0.5s ease-in-out;
+        max-height: 0; /* Menu is hidden by default */
+        transition: max-height 0.5s ease-in-out;
+        
+    } 
+    #navBar{
+        position: fixed;
+    }
+     .hidemenu {
+        max-height: 300px; /* Opens menu when toggled */
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+        margin-right: 20px;
+    }
+
+    .register-btn {
+        display: inline-block;
+        margin: 20px auto; /* Adds spacing below menu */
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #c51313;
+        border: 2px solid #c51313;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-btn:hover {
+        background-color: #c51313;
+        color: white;
+    }
+    nav .nav-links li {
+        margin: 10px 0;
+        display: block;
+    }
+    
+    .register-btn {
+        margin: 15px 0 30px;
+        display: inline-block;
+    }
+
+    nav .fa-solid.fa-bars {
+        display: block;
+        position: fixed;
+        top: 4%;
+        right: 7%;
+        color: #c51313;
+        font-size: 28px;
+    }
+
+    nav#navBar.fa-solid.fa-bars.hidemnu::before {
+        display: none;
+    }
+
+    .active::after {
+        left: -40%;
+        transform: translateX(0) translateY(50%);
+        bottom: 50%;
+    }
+
+    .hidemenu {
+        max-height: 300px;
+    }
+}

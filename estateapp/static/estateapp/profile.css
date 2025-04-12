@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+nav img{
+    width: 40px;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+label.logo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+label.logo span{
+    font-size: 12px;
+    font-weight: 200;
+}
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 30px;
+ 
+}
+.nav-links li a{
+ text-decoration: none;
+ color: orangered;
+}
+.nav-links{
+ margin-left: 60px;
+}
+.dark-mode{
+ background-color: #000;
+ color: #fff;
+ transition: .6s;
+}
+
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+
+
+#profile-pic{
+    width: 130px;
+    height: 140px;
+    border: px solid  #000;
+    border-radius: 300px;
+    margin-left: 20px;
+}
+
+#display_image{
+    width: 250px;
+    height: 260px;
+    display: none;
+    border: px solid  #000;
+    border-radius: 300px;
+    background-size: cover;
+    margin-top: 30px;
+}
+
+  label.label input[type="file"]{
+    position: absolute;
+    top: -1000px;
+}
+.label{
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin: 5px;
+    margin-left: 12%;
+    margin-top: 20px;
+    background:linear-gradient(to right, aqua , brown);
+    display: inline-block;
+}
+.row{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+label{
+    color: red;
+}
+input{
+    width: 97%;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.change{
+    float: right;
+    margin-right: 30px;
+
+}
+.save-btn{
+    width: 10%;
+    padding: 9px 0;
+    background: linear-gradient(to left, aqua , brown);
+    color: #fff;
+    font-size: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    outline: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0,5s;
+}
+.welcome{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+}
+h2 span{
+   color: red;
+}
+
+/*New code*/
+#profile-info {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin: 20px auto;
+}
+
+/* Profile Picture */
+#profile-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/* Profile Details */
+#profile-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+#profile-info p strong {
+    color: #007BFF;
+}
+
+/* Edit Profile Button */
+#edit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#cancel-btn{
+    width: 100%;
+    background-color: red;
+    height: 30px;
+    cursor: pointer;
+}
+#edit-btn:hover {
+    background-color: #218838;
+}
+@media only screen and (max-width: 700px) {
+    .logo {
+        position: fixed;
+        top: 4%;
+        left: 7%;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 100px 7% 0;
+        text-align: right;
+        max-height: 100px;
+        overflow: hidden;
+        display: inline-block;
+        transition: max-height 0.5s ease-in-out;
+        max-height: 0; /* Menu is hidden by default */
+        transition: max-height 0.5s ease-in-out;
+        
+    } 
+     .hidemenu {
+        max-height: 300px; /* Opens menu when toggled */
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+        margin-right: 20px;
+    }
+
+    .register-btn {
+        display: inline-block;
+        margin: 20px auto; /* Adds spacing below menu */
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #c51313;
+        border: 2px solid #c51313;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-btn:hover {
+        background-color: #c51313;
+        color: white;
+    }
+    nav .nav-links li {
+        margin: 10px 0;
+        display: block;
+    }
+    
+    .register-btn {
+        margin: 15px 0 30px;
+        display: inline-block;
+    }
+
+    nav .fa-solid.fa-bars {
+        display: block;
+        position: fixed;
+        top: 4%;
+        right: 7%;
+        color: #c51313;
+        font-size: 28px;
+    }
+
+    nav#navBar.fa-solid.fa-bars.hidemnu::before {
+        display: none;
+    }
+
+    .active::after {
+        left: -40%;
+        transform: translateX(0) translateY(50%);
+        bottom: 50%;
+    }
+
+    .hidemenu {
+        max-height: 300px;
+    }
+    #profile-info{
+        margin-top: 120px;
+    }
+    #profile-form{
+        margin-top: 120px;
+    }
+    .header{
+        height: 240vh;
+    }
+    .save-btn{
+        width: 30%;
+
+    }
+    #cancel-btn{
+        width: 100%;
+        background-color: red;
+        height: 30px;
+        cursor: pointer;
+    }
+}

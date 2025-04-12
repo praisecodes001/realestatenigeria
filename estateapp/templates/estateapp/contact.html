@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Contact Agent </title>
+     <link rel="stylesheet" href="{% static 'estateapp/contact.css'%}">
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <div class="header">    
+        <nav id="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, aqua , brown); ">
+        <label class="logo">Real Estate Nigeria <span>(REN)</span></label>
+        <ul class="nav-links">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/Listings/" >Listings</a></li>
+            <li><a href="/howitworks/" >How it works</a></li>
+            <li><a href="#" class="active" >Contact Us</a></li>
+        </ul>
+      
+        <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+    </nav>
+     <div class="contact-agent">
+        <h2>Contact Us</h2>
+         <div class="container">
+     <h3>Real Estate Nigeria {REN}</h3>
+     <ul>
+         <li><a href="https://wa.me/+2347064453868"><i class="fa-brands fa-whatsapp"></i></a> Whatsapp</li>
+         <li> <a href="tel:+2347064453868"><i class="fa-solid fa-phone"></i></a> Phone</li>
+         <li> <i class="fa-brands fa-telegram"></i> Telegram</li>
+         <li> <i class="fa-brands fa-instagram"></i> Instagram</li>
+     </ul>
+
+ </div>
+ </div>
+
+</div>
+</body>
+</html>

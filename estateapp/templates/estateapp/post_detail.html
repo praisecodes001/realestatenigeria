@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Real Estate Nigeria | House Details Page</title>
+     <link rel="stylesheet" href="{% static 'estateapp/post_detail.css'%}">
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+     <link rel="manifest" href="favicon_io/site.webmanifest">
+    </head>
+    <body>
+      
+        <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+            <label class="logo"> Real Estate Nigeria <span>(REN)</span> </label>
+            <ul class="nav-links">
+                <li><a href="/home/" class="">Home</a></li>
+                <li><a href="/Listings/" class="">Listings</a></li>
+                <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/contact/" class="">Contact Us </a></li>
+                <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="togglebtn()"></i>
+        </nav>
+        
+
+        <div class="house-details">
+           
+            <div class="house-title">
+
+                <h2>{{  post.title }}</h2>
+            
+                <div class="row">
+                    <div>
+                        
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <p>2322 Reviews &nbsp; &nbsp; Location: {{  post.area }} &nbsp; &nbsp; Availability: {{post.availability}}</p> 
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            
+             
+            <div class="gallery">
+                <div class="gallery-img-1">
+                    <img src="{{ post.thumb.url }}" alt="">
+                    <p class="text-content">{{ post.category }}</p>
+                </div>
+                <div class="gal" onclick="{ post.secondary.url }"><img src="{{ post.secondary.url }}" alt=""></div>
+                <div class="gal"><img src="{{ post.secondary_2.url}}" alt=""></div>
+                <div class="gal"><img src="{{ post.secondary_3.url}}" alt=""></div>
+                <div class="gal"><img src="{{ post.secondary_4.url}}" alt=""></div>
+            </div>
+        
+        
+       
+            <div class="small-details">
+                
+                <p> <i class="fa-solid fa-bed"></i> {{  post.bedroom }} Bedrooms &nbsp; <i class="fa-solid fa-bath"></i> {{  post.bathroom }} Bathrooms &nbsp; <i class="fa-solid fa-toilet"></i> {{  post.toilet }} Toilets &nbsp; </p>
+                <h4>₦{{  post.currencyfield }}</h4>
+                <h4>{{ post.subtype }}</h4>
+            </div>
+            <hr class="line">
+
+            <form class="check-form">
+                <div class="space">
+                   <div class="space-row">
+                       <div class="space-1">
+                           <h2>Total Area</h2>
+                           <p>{{  post.totalarea }}</p>
+                       </div>
+                       <div class="space-1">
+                           <h2>Covered Area</h2>
+                           <p>{{  post.coveredarea }}</p>
+                       </div>
+                       <div class="space-1">
+                           <h2>Area/Locality</h2>
+                           <p>{{  post.area }}</p>
+                       </div>
+                       <div class="space-1">
+                           <h2>State</h2>
+                           <h5>{{  post.state }}</h5>
+                       </div>
+                   </div>
+                </div>
+               <a type="submit" href="/contactagent/">Check Availability</a>
+           </form>
+
+            
+          <ul class="details-list">
+              <li> <i class="fa-solid fa-house"></i> Entire Home
+                  <span>You will have the entire flat for you.</span>
+              </li>
+              <li> <i class="fa-solid fa-broom"></i> Enhanced Cleaning(Viable by agreement)
+                <span>You will have the entire flat cleaned for you by our professional team of cleaners.</span>
+            </li>
+            <li> <i class="fa-solid fa-location-dot"></i> Great Location
+                <span>Rest assured of the location been a conducive environment.</span>
+            </li>
+            <li> <i class="fa-solid fa-heart-circle-check"></i> Great-Check -In Experience 
+                <span>Pay and pack-in at it's best</span>
+            </li>
+          </ul>
+          <hr class="line">
+          <h2 class="desc">Description</h2>
+   
+           <p class="home-desc">{{  post.description }}</p>
+           <hr class="line">
+        <div class="map">
+            <h3>Location On Map</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3422.659644353082!2d3.548352014296705!3d6.431311226013596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf7018e3bf95d%3A0x5dc2a642e0a8c9eb!2sOrchid%20Rd%2C%20Eti-Osa%20106104%2C%20Lekki!5e1!3m2!1sen!2sng!4v1648080445008!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+           
+           <p>Its a beautiful place to live</p>
+        </div>
+        <hr class="line">
+        {}
+        <div class="host">
+            {% if profile.profile_picture%}
+
+            <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" width="150" height="150">
+            {% else %}
+            <img src="{% static 'estateapp/image/apple.png'%}" alt="Default">
+            {% endif %}
+            <div>
+                <h2>Posted by {{  post.author }}</h2>
+                <p><span>
+                    <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                </span></p>
+            </div>
+        </div>
+        <a href="/contactagent/" class="contact-host">Contact Host </a>
+        </div>
+        
+        <div class="container">
+            <div class="footer">
+                <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://Instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>  
+                <hr>
+                <p>Copyright <i class="fa-regular fa-copyright"></i> 2025,Real Estate Nigeria <span>(REN)</span></p>             </div>
+        </div>
+
+        <script>
+            var navBar=document.getElementById("navBar");
+            function togglebtn(){
+                navBar .classList.toggle("hidemenu");
+               
+            }
+        </script>
+
+ </body>
+</html>

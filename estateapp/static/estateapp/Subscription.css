@@ -1,0 +1,221 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+label.logo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+label.logo span{
+    font-size: 12px;
+    font-weight: 200;
+}
+#navBar a i.fa.fa-moon-o.fa-2x{
+     width: 40px;
+     height: 30px;
+     text-decoration: none;
+     color: black;
+}
+.nav-links li{
+       list-style: none;
+       display: inline-block;
+       margin: 10px 30px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: orangered;
+}
+.dark-mode{
+    background-color: #000;
+    color: #fff;
+    transition: .6s;
+}
+
+
+.register-btn{
+    background: #fff;
+    color:#000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    
+}
+.container h2{
+    color: #fff;
+    font-size: 32px;
+    padding: 50px 0;
+    text-align: center;
+}
+.price-row{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.price-col{
+    background: black;
+   padding: 10% 15%;
+   border-radius: 10px;
+   color: #fff;
+   text-align: center;
+   margin-right: 30px;
+   margin-top: 40px;
+   cursor: pointer;
+   transition: .5s;
+}
+.price-col a{
+    text-decoration: none;
+}
+.price-col a p{
+    color: #ff0000;
+}
+.price-col p{
+  font-size: 29px;
+  font-weight: 600;
+  color: #ff0000;
+
+
+}
+.price-col a h3{
+    color: #ff0000;
+}
+.price-col h3{
+    font-size: 25px;
+    margin: 20px 0 40px;
+    font-weight: 600;
+    color: #ff0000;
+}
+.price-col h3 span{
+    font-size: 16px;
+}
+.price-col ul{
+    text-align: left;
+    margin: 20px 0;
+    color: #ddd;
+    list-style: none;
+}
+.price-col ul li{
+    margin: 10px 0;
+    font-size: 15px;
+}
+.price-col ul li::before{
+    content: '\2022';
+    color: #e33058;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.price-col button{
+    width: 100%;
+    padding: 14px 0;
+    background: linear-gradient(to left, white, green);
+    color: #fff;
+    font-size: 15px;
+    border-radius: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background 0,5s;
+}
+.price-col button:hover{
+    background: linear-gradient(to right,white, green);
+}
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(240, 8, 8);  
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(216, 27, 27); 
+    
+  }
+
+  /*---------for small screen devices-------*/
+@media only screen and (max-width: 700px){
+    
+    .logo{
+        position: fixed;
+        top: 4%;
+        left: 7%;
+    }
+    nav{
+     position: fixed;
+     top: 0;
+     z-index: 100;
+     display: inline-block;
+     width: 100%;
+     padding: 100px 7% 0; 
+     text-align: right;
+     max-height: 100px;
+     overflow: hidden;
+     transition: max-height 0.5s;
+    }
+   
+    nav .nav-links li{
+       margin: 10px 0;
+       display: block;
+    }
+    .register-btn{
+       margin: 15px 0 30px;
+       display: inline-block;
+    }
+    nav .fa-solid.fa-bars{
+    display: block;
+    position: fixed;
+    top: 4%;
+    right: 7%;
+    color: #c51313;
+    font-size: 28px;
+    }
+    nav#navBar.fa-solid.fa-bars.hidemnu::before{
+        display: none;
+    }
+    
+    .hidemenu{
+        max-height: 300px;
+
+    }
+    .price-row{
+        display: block;
+    }
+    .price-col{
+        width: 180%;
+    }
+}

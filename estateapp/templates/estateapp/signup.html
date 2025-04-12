@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale =1"/>
+     <title>Real Estate Nigeria | Registration Form</title>
+     <link rel="stylesheet" href="{% static 'estateapp/style.css'%}" >
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+     <script src="js/jquery-3.2.1.min.js"> </script>
+
+     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+     <link rel="manifest" href="/site.webmanifest">
+    </head>
+    <body>
+
+
+        <div class="hero">
+            <div class="popup">
+                <h2 class="already">E-mail already registered</h2>
+        </div> 
+                <div class="form-box">
+                    <div class="button-box">
+                        <div id="btn"></div>
+                           <button type="button" class="toggle-btn" > Register</button>
+                    </div> 
+                
+    
+                    <form id="register" enctype="multipart/form-data"  onsubmit="return checkForBlank()"   class="input-group" action="" method="POST">
+                       
+                        {% csrf_token %}
+                         
+                       
+                        <input type="text" class="input-field custom-class" style="color: #0000;" name="username" id="username" placeholder=" User Name" required {{form.username}} 
+                    
+                        <span id="username_error_message" class="error"></span>
+
+                        <input type="email" class="input-field custom-class" name="email" id="email" placeholder="Email"  style="outline: none;" {{form.email}}
+                        <span id="email_error_message" class="error"></span>
+
+                        <input type="password" class="input-field custom-class" id="password1" name="password1" placeholder="Password" style="outline: none;" required {{form.password1}}
+                        <span id="password1_error_message" class="error"></span>
+                        
+                        <input type="password" class="input-field custom-class" id="password1" name="password2" placeholder="Confirm Password" style="outline: none;" required {{form.password2}}
+
+                        
+
+
+                        <p>Read carefully the <a href="Readme.md" target="_blank">Privacy & Conditions</a></p>
+                        <input type="checkbox" class="check-box"><span>I agree to the terms & conditions </span>
+                        <button type="submit" class="submit-btn" name="Create User" >Register</button>
+                         {{form.errors}}
+                          <p class="click">Already Registered? <a href="/login/">Sign-in</a></p>
+                    </form>
+                </div>
+                
+    
+                 
+      
+            </div>
+    
+   
+
+   
+        
+    
+  
+        
+
+   
+
+<script>
+    function checkForBlank() {
+if(document.getElementById("email").value == "") {
+    document.getElementById("email_error_message").textContent="Email required!";
+        
+}
+if(document.getElementById("password1").value == "") {
+    document.getElementById("password1_error_message").textContent="Password required!";
+        
+}
+       
+if (document.getElementById("username").value == "") {
+    document.getElementById("username_error_message").textContent="Username required!";
+     return false;
+}
+            }
+        </script>
+
+    </body>
+
+
+    
+
+
+
+
+    </html>

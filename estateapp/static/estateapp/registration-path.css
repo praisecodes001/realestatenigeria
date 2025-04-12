@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+label.logo span{
+    font-size: 12px;
+    font-weight: 200;
+}
+#navBar a i.fa.fa-moon-o.fa-2x{
+     width: 40px;
+     height: 30px;
+     text-decoration: none;
+     color: black;
+}
+.container{
+    margin: 20px;
+}
+.cta{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url(image/landscape.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 2%;
+    margin-top: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.cta h3{
+    font-size: 4vw;
+    line-height: 5.5vw;
+    font-weight: 500;
+}
+.cta p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-btn{
+    background: linear-gradient(to left, aqua , brown);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.cta-1{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url(image/owner.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 3%;
+    color: #fff;
+    cursor: pointer;
+}
+.cta-1 h3{
+    font-size: 4vw;
+    line-height: 5.5vw;
+    font-weight: 500;
+}
+.cta-1 p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-1-btn{
+    background: linear-gradient(to left, aqua , brown);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}

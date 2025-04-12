@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale =1.0">
+     <title>Real Estate Nigeria | Dashboard</title>
+    <link rel="stylesheet" href= "{% static 'estateapp/dashboard.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+    </head>
+   
+    <body>
+    <div class="header">  
+        <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+            <ul class="nav-links">
+                <li><a href="/personal/" class="#">My Listings</a></li>
+                <li><a href="profile/" class="#">Profile</a></li>
+                <li><a href="/pro/" class="#">Add Property</a></li>
+                <li><a href="/subscription/" class="#">Subscriptions</a></li>
+                <li><a href="{% url 'logout' %}" class="">Log-out</a></li>
+                <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
+              
+            </ul>
+           
+            
+        </nav>
+        
+         
+       
+
+                <div class="container">
+                  <h2>Welcome  <span>{{request.user}}</span>! 🚀 Ready to close more deals today?</h2>
+                    <p>You haven't made any posts yet!</p>
+                    <button class="add">
+                        <a href="/dashboard/profile/">
+                            <i class="fa-solid fa-house-medical-circle-check"></i> Edit Your Profile
+                        </a>
+                    </button>
+                    
+                </div>
+ 
+        
+    
+        <script src="index.js"></script>
+        
+<script>
+            var navBar=document.getElementById("navBar");
+            function togglebtn(){
+                navBar .classList.toggle("hidemenu");
+            }
+</script>
+
+ <script>
+
+            var sidemenu = document.getElementById("drop");
+       
+             function openprofile(){
+                  sidemenu.style.right = "0";
+             }
+             function closeprofile(){
+                 sidemenu.style.right = "-200px";
+             }
+ </script>
+ 
+ <script>
+    let profilePic = document.getElementById("profile-pic");
+    let imageInput = document.getElementById("image_input");
+
+    imageInput.onchange = function(){
+        profilePic.src = URL.createObjectURL(imageInput.files[0]);
+
+    }
+</script>
+<script>
+    var sub =document.getElementById("sub");
+    function myFunctioin(){
+        alert("Profile Upload Succesfull")
+    }
+</script>
+  
+</body>
+</html>        

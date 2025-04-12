@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'estateapp/profile.css'%}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+    <title>Real Estate Nigeria | Profile</title>
+</head>
+
+<body>
+    
+     <div class="header">
+        <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+            <label class="logo"> <a href="/home/">Real Estate Nigeria<span>(REN)</span></a></label>
+              <ul class="nav-links">
+                  <li><a href="/personal/" class="#">My Listings</a></li>
+                  <li><a href="#" class="active">Profile</a></li>
+                  <li><a href="/dashboard/" >Dashbord</a></li>
+                  <li><a href="/pro/" class="#">Add Property</a></li>
+                  <li><a href="/subscription" class="#">Subscriptions</a></li>
+                  <li><a href="{% url 'logout' %}" class="">Log-out</a></li>
+                  <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
+                
+              </ul>
+             
+              
+          </nav>
+
+          
+           
+           
+            
+       
+
+          
+              <h2 class="welcome">Your Profile</h2>
+
+        
+
+         <div class="container">
+            <div id="profile-info">
+                {% if user.profile.profile_picture %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" width="150" height="150">
+                {% else %}
+                <img src="{% static 'estateapp/image/apple.png'%}" alt="" id="profile-pic"> 
+                {% endif %}
+                <p><strong>Username:</strong> {{ user.username }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Full Name:</strong> {{ user.profile.fname|default:"Not provided" }}</p>
+                <p><strong>Company Name:</strong> {{ user.profile.cname|default:"Not provided" }}</p>
+                <p><strong>Office Address:</strong> {{ user.profile.office|default:"Not provided" }}</p>
+                <p><strong>Phone:</strong> {{ user.profile.phone|default:"Not provided" }}</p>
+                <p><strong>Instagram:</strong> {{ user.profile.insta|default:"Not provided" }}</p>
+                <p><strong>Telegram:</strong> {{ user.profile.telegram|default:"Not provided" }}</p>
+            
+                <button id="edit-btn">Edit Profile</button>
+            </div>
+
+            <div id="profile-form" style="display: none;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Profile Picture</label>
+        <input type="file" name="profile_picture"> 
+        <div class="row">
+            <div class="col-1">
+                <label for="fname">Full Name</label>
+                <input type="text" name="fname" id="fname" value="{{ user.profile.full_name }}">
+            </div>
+
+            <div class="col-2">
+                <label for="cname">Company Name</label>
+                <input type="text" name="cname" id="cname" value="{{ user.profile.company_name }}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <label for="username">User Name</label>
+                <input type="text" name="username" value="{{ user.username }}" id="username" readonly>
+            </div>
+
+            <div class="col-4">
+                <label for="office">Office Address</label>
+                <input type="text" name="office" id="office" value="{{ user.profile.office_address }}">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <label for="phone">Phone-Number(Whatsapp)</label>
+                <input type="text" name="phone" id="phone" value="{{ user.profile.phone }}">
+            </div>
+
+            <div class="col-6">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" value="{{ user.email }}" id="email" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <label for="insta">Instagram(Optional)</label>
+                <input type="text" name="insta" id="insta" value="{{ user.profile.instagram }}">
+            </div>
+
+            <div class="col-6">
+                <label for="telegram">Telegram(Optional)</label>
+                <input type="text" name="telegram" id="telegram" value="{{ user.profile.telegram }}">
+            </div>
+        </div>
+       
+        <div id="display_image" style="display: none;">
+            <img src="{% static 'estateapp/image/apple.png'%}" alt="" id="profile-pic"> 
+            <label class="label">
+               <input type="file" name="image_input" id="image_input">
+               <span>Upload Picture</span>
+            </label>
+
+         </div>
+
+        <p class="change"><a href="">Change Password</a></p>
+        <button type="submit" class="save-btn">Save Changes</button>
+    </form>
+
+    <button id="cancel-btn">Cancel</button>
+</div>
+
+         </div>
+         
+     </div>
+
+     
+
+
+
+</body>
+<script src="{% static 'estateapp/profole.js'%}"></script>
+<script>
+    let profilePic = document.getElementById("profile-pic");
+    let imageInput = document.getElementById("image_input");
+
+    imageInput.onchange = function(){
+        profilePic.src = URL.createObjectURL(imageInput.files[0]);
+
+    }
+</script>
+
+<script>
+    var sub =document.getElementById("sub");
+    function myFunctioin(){
+        alert("Profile Upload Succesfull")
+    }
+</script>
+<script type='text/javascript'>
+    function showPicture() {
+      document.getElementById('display_image').style.display = 'block';
+      
+    }
+    </script>
+
+<script>
+    document.getElementById("edit-btn").addEventListener("click", function () {
+        document.getElementById("profile-info").style.display = "none";
+        document.getElementById("profile-form").style.display = "block";
+    });
+
+    document.getElementById("cancel-btn").addEventListener("click", function () {
+        document.getElementById("profile-form").style.display = "none";
+        document.getElementById("profile-info").style.display = "block";
+    });
+</script>
+
+</html>

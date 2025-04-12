@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale =1" />
+     <title>Real Estate Nigeria | Sign-in</title>
+     <link rel="stylesheet" href="{% static 'estateapp/style.css'%}">
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+     <script src="js/jquery-3.2.1.min.js"> </script>
+    </head>
+    <body>
+
+<div class="hero">
+    <div class="form-box">
+         <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+
+         </div>
+         <form id="login" class="input-group" action="" method="POST">
+
+            {% csrf_token %}
+            
+            <input type="text" class="input-field" id="enter" placeholder="Username" name="username" required>
+            <input type="password" class="input-field" id="enter" placeholder="Password" name="password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button type="submit" class="submit-btn" value="Login" >Log In</button>
+
+            {% for messages in messages %}
+               <p id="messages">{{messages}}</p>
+            {% endfor %}
+            <p class="click">Don't have an account? <a href="/sign-up/">Sign-up</a></p>
+        </form>
+    </div>
+</div>
+
+    </body>
+</html>
+

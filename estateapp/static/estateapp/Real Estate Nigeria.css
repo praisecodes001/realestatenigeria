@@ -1,0 +1,1287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header{
+    min-height: 130vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 7%;
+}
+nav img{
+    width: 40px;
+}
+label.logo{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+label.logo span{
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.hidemenu {
+    max-height: 300px; /* Opens when the class is added */
+}
+#navBar a i.fa.fa-moon-o.fa-2x{
+     width: 40px;
+     height: 30px;
+     text-decoration: none;
+     color: black;
+}
+nav#navBar.hidemenu.fa-bars::before{
+    display: none;
+}
+nav#navBar.fa-solid.fa-bars.hidemnu::before{
+    display: none;
+}
+.nav-links li{
+       list-style: none;
+       display: inline-block;
+       margin: 10px 30px;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: orangered;
+}
+.nav-links{
+    margin-left: 60px;
+}
+.dark-mode{
+    background-color: #000;
+    color: #fff;
+    transition: .6s;
+}
+
+
+.register-btn{
+    background: #fff;
+    color:#000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.container{
+    padding: 0 7%;
+
+}
+.container-2{
+    padding: 0 7%;
+    
+}
+.header h1{
+    font-size: 4vw;
+    font-weight: 500;
+    color: #fff;   
+    text-align: center;
+    padding-top: 22%;
+}
+.search-box{
+    background: linear-gradient(to left, white, green);
+    width: 80%;
+    margin: 30px auto;
+    padding: 6px 10px 6px 30px;
+    border-radius: 50px;
+}
+.search-box form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-box form input{
+    display: block;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.search-box form input::placeholder{
+    font-size: 12px;
+    font-weight: 600;
+}
+.search-box form  button {
+    background: #ff5361;
+    width: 90px;
+    height: 50px;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+}
+.search-box form  a button{
+    text-decoration: none;
+    cursor: pointer;
+}
+.search-box form a button{
+    text-decoration: none;
+    color: #000;
+}
+.location-input{
+    flex: 1;
+} 
+.search-box form label{
+    font-weight:400;
+} 
+input::placeholder{
+    color: #fff;
+}
+
+
+
+ 
+/*-------exclusives-------*/
+.sub-title{
+    margin: 50px 0 20px;
+    font-weight: 500;
+    font-size: 2.2vw;
+    color: #333;
+}
+.exclusives{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+}
+.exclusives div img{
+    width: 100%;
+    border-radius: 10px;
+}
+.exclusives div img:hover{
+    width: 100%;
+    border-radius: 30px;
+    transition: .5s;
+}
+.exclusives div{
+    position: relative;
+}
+.exclusives div span{
+    top:50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+}
+
+
+/*------Trending Places-------*/
+.trending{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+.trending div img{
+    width: 100%;
+    border-radius: 10px;
+}
+.trending div img:hover {
+    border-radius: 10px;
+    transition: .5s;
+    border-radius: 30px;
+}
+.trending h3{
+    font-weight: 600;
+    margin-top: 10px;
+}
+.btn{
+    width: 10%;
+    margin-left: 10px;
+    background: linear-gradient(to left, white, green);
+    border: none;
+    outline: none;
+    height: 30px;
+    border-radius: 10px;
+}
+.btn:hover{
+    background: linear-gradient(to left, green, white);
+    transition: .5s;
+    width: 15%;
+    font-size: 12px;
+    height: 35px;
+    border-radius: 10px;
+}
+/*----------call to action -------*/
+.cta{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url(image/landscape.png);
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #fff;
+    cursor: pointer;
+}
+.cta h3{
+    font-size: 4vw;
+    line-height: 5.5vw;
+    font-weight: 500;
+}
+.cta p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-btn{
+    background: linear-gradient(to left, white, green);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+/*----owner----*/
+.cta-1{
+    margin: 80px 0;
+    background-image: linear-gradient(to right, #3f2321, transparent),url(image/owner.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    padding: 5%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cta .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none; /* To make sure the text cannot be clicked */
+}
+.cta .content {
+    position: relative;
+    z-index: 1; /* Content is beneath the overlay */
+    opacity: 0.5; /* Optional to make the content look inactive */
+}
+
+.cta-1 h3{
+    font-size: 4vw;
+    line-height: 5.5vw;
+    font-weight: 500;
+}
+.cta-1 p{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.cta-1-btn{
+    background: linear-gradient(to left, white, green);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: inline-block;
+}
+/*----------Travellers Stories-- -------*/
+h2{
+    font-size: 30px;
+}
+.stories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+.stories div img{
+    width: 100%;
+    border-radius: 10px;
+}
+.stories div{
+    position: relative;
+    text-align: center;
+}
+.stories p{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 26px;
+}
+.start-btn{
+    text-decoration: none;
+    background: linear-gradient(to left, white, green);
+    color: #fff;
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    text-align: center;
+    margin: 50px auto;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+.start-btn span{
+    font-size: 13px;
+}
+.border-box{
+    width: 14%;
+    background-color: darkgoldenrod;
+    height: 5px;
+    margin-top: -10px;
+    margin-left: 27px;
+}
+
+/*----about-msg----*/
+.about-msg{
+    text-align: center;
+    margin: 80px 0;
+    color: #333;
+    font-size: 17px;
+}
+.about-msg h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+.about-msg p span{
+    font-size: 15px;
+}
+
+/*----P--------*/
+h2{
+    padding-left: 40px;
+}
+
+
+/*----help--------*/
+.help{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.help p a{
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 50%;
+}
+.text-box{
+    background-color: #ffff;
+    width: 100%;
+    border-radius: 6px;
+
+    
+}
+.text-box p{
+    font-size: 20px;
+}
+.text-box h5{
+    color: #c51313;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+/*---------footer----*/
+.footer{
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: #999;
+    font-size: 22px;
+    margin: 0 10px;
+}
+.footer hr{
+    background: #999;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+}
+.footer p{
+    padding-bottom: 15px;
+}
+.footer .fab.fa-facebook-f{
+    color:  #3b5998;
+}
+.footer .fab.fa-twitter{
+    color: #00acee;
+}
+.footer .fab.fa-instagram{
+    color: #fb3958;
+}
+.footer .fab.fa-youtube{
+    color:  #FF0000;
+}
+.footer .fab.fa-linkedin-in{
+  color: #0e76a8;    
+}
+
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+.app h2{
+    text-align: center;
+
+}
+
+.app img{
+    height: 350px;
+    margin-left: 400px;
+    width: 400px;
+}
+.button-row{
+    display: flex;
+    margin-left: 350px;
+}
+.android{
+    background-color: #000000;
+    color: #fff;
+    height: 60px;
+    width: 130%;
+    cursor: pointer;
+    margin-right: 70px;
+    font-size: 20px;
+}
+.android img{
+     width: 100px;
+     margin-left: -170px;
+     height: 90px;
+     margin-top: -40px;
+}
+.android a{
+   text-decoration: none;
+   color: #fff;
+}
+.android a p{
+    color: #fff;
+    margin-top: -60px;
+}
+.apple a{
+    text-decoration: none;
+    color: #fff;
+}
+.apple{
+    background-color: #000000;
+    height: 60px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    width: 130%;
+    margin-left: 70px;
+}
+.apple img{
+    width: 60px;
+    margin-left: -170px;
+    height: 50px;
+    margin-top: -20px;
+}
+.apple a p{
+    color: #fff;
+    margin-left: 20px;
+    margin-top: -40px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffffff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(240, 8, 8);  
+}
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(216, 27, 27); 
+    
+  }
+/*---------for small screen devices-------*/
+@media only screen and (max-width: 700px) {
+    .logo {
+        position: fixed;
+        top: 4%;
+        left: 7%;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 100px 7% 0;
+        text-align: right;
+        max-height: 100px;
+        overflow: hidden;
+        display: inline-block;
+        transition: max-height 0.5s ease-in-out;
+        max-height: 0; /* Menu is hidden by default */
+        transition: max-height 0.5s ease-in-out;
+        
+    } 
+     .hidemenu {
+        max-height: 300px; /* Opens menu when toggled */
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+        margin-right: 20px;
+    }
+
+    .register-btn {
+        display: inline-block;
+        margin: 20px auto; /* Adds spacing below menu */
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: #c51313;
+        border: 2px solid #c51313;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .register-btn:hover {
+        background-color: #c51313;
+        color: white;
+    }
+    nav .nav-links li {
+        margin: 10px 0;
+        display: block;
+    }
+    
+    .register-btn {
+        margin: 15px 0 30px;
+        display: inline-block;
+    }
+
+    nav .fa-solid.fa-bars {
+        display: block;
+        position: fixed;
+        top: 4%;
+        right: 7%;
+        color: #c51313;
+        font-size: 28px;
+    }
+
+    nav#navBar.fa-solid.fa-bars.hidemnu::before {
+        display: none;
+    }
+
+    .active::after {
+        left: -40%;
+        transform: translateX(0) translateY(50%);
+        bottom: 50%;
+    }
+
+    .hidemenu {
+        max-height: 300px;
+    }
+
+    .header h1 {
+        padding-top: 200px;
+        font-size: 7vw;
+    }
+
+    .search-box {
+        width: 90%;
+        height: 470px;
+        margin: 30px auto;
+        padding: 20px 10px 30px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .search-box form {
+        display: block;
+    }
+
+    .search-box form input {
+        border-bottom: 1px solid #ddd;
+        margin: 10px 0 20px;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    .search-box form button {
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+    }
+
+    .search-box form a {
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+    }
+
+    .sub-title {
+        font-size: 6vw;
+    }
+
+    .btn {
+        width: 20%;
+    }
+
+    .cta {
+        padding: 15% 5%;
+        margin-top: 20px;
+    }
+
+    .cta h3 {
+        font-size: 7vw;
+        line-height: 8vw;
+    }
+
+    .cta p {
+        font-size: 14px;
+    }
+
+    .cta-btn {
+        padding: 6px 15px;
+        border-radius: 4px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .stories p {
+        font-size: 22px;
+    }
+
+    .about-msg {
+        font-size: 15px;
+    }
+
+    .about-msg h2 {
+        margin-top: 10px;
+    }
+
+    /*------App Section------*/
+    .app img {
+        margin-left: -10px;
+    }
+
+    .button-row {
+        margin-left: 30px;
+    }
+
+    .nom {
+        width: 30%;
+    }
+
+    .android a p {
+        font-size: 15px;
+        padding-left: 15px;
+        padding-top: 14px;
+    }
+
+    .android img {
+        margin-left: -80px;
+        margin-top: -20px;
+    }
+
+    .apple a p {
+        font-size: 15px;
+        padding-left: 37px;
+        padding-top: 1px;
+    }
+
+    .apple img {
+        margin-left: -60px;
+        margin-top: 6px;
+    }
+}
+/*----------Listings Page---------*/
+.logo span{
+    font-size: 20px;
+}
+.navbar-white{
+    background: linear-gradient(to right, aqua, violet);;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.left-col a{
+    font-size: 20px;
+    font-weight: 400;
+    float: right;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #3b5998;
+}
+.navbar-white .nav-links li a{
+    color: #000;
+}
+.navbar-white .register-btn{
+    background: #3f2321;
+    color: #ddd;  
+}
+nav .navbar-white .fa-bars{
+    color: #000;
+}
+.navbar-white .active::after{
+    background: #ff5361;
+}
+.list-container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.left-col{
+    flex-basis: 70%;
+}
+.right-col{
+    flex-basis: 25%;  
+}
+.left-col h1{
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.house {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.house a{
+    text-decoration: none;
+    color: #000;
+}
+.house-img{
+    flex-basis: 40%;
+}
+.house-info{
+    flex-basis: 58%;
+    color: #555;
+}
+.house-img img{
+    width: 90%;
+    border-radius: 12px;
+    height: 250px;
+}
+
+.house-info h3{
+    font-weight: 600;
+    color: #333;
+    font-size: 22px;
+    margin: 4px 0;
+}
+.house-info i{
+    color: orangered;
+    margin: 10px 1px;
+    font-size: 18px;
+}
+.house-price{
+    text-align: right;
+}
+.house-price h4{
+    font-size: 20px;
+}
+.house-price h4 i{
+    color: #000;
+    font-size: 15px;
+}
+.house-info ul li{
+        list-style: none;
+        display: inline-flex;
+        margin: 1px 9px;
+}
+.house-info ul li p{
+    padding-top: 11px;
+}
+.house-info i.fa-brands.fa-whatsapp {
+      color: #4FCE5D;
+      font-size: 20px;
+}
+.house-price h4 span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.sidebar{
+    border: 1px solid #999;
+    padding: 20px 30px;
+    margin-top: 30px;
+}
+.sidebar h2{
+    font-weight: 600;
+}
+.sidebar h3{
+    font-weight: 500;
+    margin: 20px 0 10px;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-bottom: 10px;
+}
+.filter p{
+    flex: 1;
+}
+.filter input{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.sidebar-link {
+    text-align: right;
+    margin: 20px 0;
+}
+.sidebar-link a{
+    text-decoration: none;
+}
+.pagination{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+}
+.pagination img{
+    width: 15px;
+    margin: 10px 20px;
+    cursor: pointer;
+
+}
+.right-arrow{
+    transform: rotate(180deg);
+    
+}
+.pagination span{
+    margin: 10px 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 15%;
+    cursor: pointer;
+}
+.pagination .current{
+    background: #333;
+    color: #fff;
+}.footer{
+    margin: 80px 0 10px;
+    text-align: center;
+}
+.footer a{
+    text-decoration: none;
+    color: #999;
+    font-size: 22px;
+    margin: 0 10px;
+}
+.footer hr{
+    background: #999;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    margin: 20px 0;
+}
+.footer p{
+    padding-bottom: 15px;
+}
+.footer .fab.fa-facebook-f{
+    color:  #3b5998;
+}
+.footer .fab.fa-twitter{
+    color: #00acee;
+}
+.footer .fab.fa-instagram{
+    color: #fb3958;
+}
+.footer .fab.fa-youtube{
+    color:  #FF0000;
+}
+.footer .fab.fa-linkedin-in{
+  color: #0e76a8;    
+}
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+}
+nav .fa-bars{
+    display: none;
+}
+
+/*------small screen for listing page------*/
+@media only screen and (max-width: 700px){
+    .list-container{
+        margin-top: 150px;
+    }
+    .left-col, .right-col, .house-img, .house-info{
+        flex-basis: 100%;
+    }
+    .left-col h1{
+        font-size: 22px;
+    }
+    .house-info h3{
+        font-size: 18px;
+    }
+    .house-info i{
+        font-size: 16px;
+    }
+    .pagination span{
+        margin: 10px 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+    }
+}
+/*---------house-details page----*/
+#navBar{
+    background:  linear-gradient(to right, aqua, violet);
+}
+.house-details{
+    padding: 0 12%;
+}
+.house-title{
+    margin-top: 50px;
+}
+.house-title h1{
+    font-weight: 600;
+}
+.house-title .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px 0;
+}
+.house-title span{
+    margin: 0 20px;
+}
+.house-title i{
+    color: orangered;
+    font-size: 14px;
+}
+.gallery{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 'first first . .' 'first first . .'; 
+    margin: 20px 0;
+}
+.gallery div img{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+.gallery-img-1{
+    grid-area: first;
+}
+.small-details h2{
+    font-weight: 800;
+}
+.small-details h4{
+      text-align: right;
+      font-size: 22px;
+}
+.line{
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    max-width: 800px;
+    margin: 20px 0 50px;
+}
+.check-form{
+    margin: 30px 0;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 50px;
+}
+.check-form label{
+    display: block;
+}
+.check-form div{
+    padding: 20px;
+}
+.check-form input{
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+.check-form  button{
+    background: #ff5361;
+    border: 0;
+    outline: none;
+    color: #fff;
+    padding: 18px;
+    width: 330px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.guest-field{
+    flex: 1;
+}
+.location-input{
+    flex: 1;
+} 
+.search-bar form label{
+    font-weight: 600;
+}
+.line{
+    width: 100%;
+}
+.details-list{
+    list-style: none;
+    margin: 50px 0;
+}
+.details-list li{
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #555;
+    position: relative;
+}
+.details-list li span{
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+}
+.details-list li i{
+    position: absolute;
+    top: 5px;
+    left: -40px;
+}
+.home-desc{
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+.desc{
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.map{
+    margin: 50px 0;
+}
+.map h3{
+    font-size: 26px;
+    font-weight: 500;
+    margin: 30px;
+}
+.map b{
+    display: block;
+    margin-bottom: 16px;
+}
+.map iframe{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.host{
+    display: flex;
+    align-items: center;
+}
+.host img {
+    width: 80px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+.host h2{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.host i{
+    color: orangered;
+}
+.contact-host{
+    display: inline-block;
+    margin: 40px 0 40px 120px;
+    text-decoration: none;
+    color: #555;
+    padding: 15px 50px;
+    border: 1px solid orangered;
+    border-radius: 8px;
+}
+/*------media query for house details page------*/
+@media only screen and (max-width: 700px){
+    .house-details{
+        margin-top: 150px;
+    }
+    .row p{
+        margin-top: 10px;
+    }
+    .gallery{
+        grid-template-areas: 'first first' '. .' '. .';
+    }
+    .small-details h2{
+          font-size: 20px;
+          margin-top: 24px;
+    }
+    .small-details h4{
+         text-align: left;
+         margin: 10px 0;
+         font-size: 18px;
+    }
+    .check-form{
+        padding: 10px 30px;
+    }
+    .check-form div {
+       padding: 20px 0;
+       width: 100%;       
+    }
+    .check-form input {
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    .check-form button{
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+     .host{
+         display: block;
+         line-height: 28px;
+     }
+     .contact-host{
+         margin: 40px 0;
+     }
+
+}
+ 
+/*--------contact agent---------*/
+.contact-agent .container{
+    margin: 30px 30px;
+    background: linear-gradient(to left, aqua, violet);;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 50px;
+    height: 300px;
+}
+.contact-agent .container h3 span{
+   font-size: 20px;
+}
+.contact-agent h2{
+    font-weight: 500;
+    font-size: 30px;
+    padding-left: 40%;
+    margin-top: 30px;
+}
+.contact-agent{
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+.contact-agent ul li{
+    list-style: none;
+    display: inline-flex;
+    margin: 30px 30px;
+    margin-left: 170px;
+}
+.contact-agent h3 {
+     font-size: 50px;
+    font-weight: 700;
+}
+.contact-agent i{
+    color: orangered;
+    size: 20px 0;
+}
+.contact-agent i.fa-brands.fa-whatsapp{
+       color: #4FCE5D;
+       font-size: 20px;
+}
+.contact-agent i.fa-solid.fa-phone{
+    color: orangered;
+    font-size: 20px;
+}
+.contact-agent i.fa-brands.fa-telegram{
+    color: #2e4392;
+    font-size: 20px;
+}
+.contact-agent i.fa-brands.fa-instagram{
+    color: #fb3958;
+    font-size: 20px;
+}
+
+/*-----Afiliate Programme------*/
+.affiliate{
+    flex-basis: 30%;
+    margin: 30px 0;
+}
+nav .navbar-white .fa-bars{
+    color: #000;
+}
+.navbar-white{
+    box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.affiliate h2{
+    font-size: 50px;
+    font-weight: 900;
+    padding-left: 30%;
+    color: #2e4392;
+}
+.affiliate h3{
+    font-size: 50px;
+    font-weight: 900;
+    padding-left: 40%;
+    color: #2e4392;
+    margin-top: 40px;
+}
+.submit-btn{
+    width: 50%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, aqua, violet);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+/*------media query for affiliate page------*/
+@media only screen and (max-width: 700px){
+
+}

@@ -39,7 +39,6 @@ h2.already{
     background: #fff;
     padding: 5px;
     border-radius: 20px;
-    
     margin-top: 10px;
 }
 .button-box{
@@ -116,7 +115,7 @@ input.input-field.custom-class{
     border-bottom: 1px solid #3b5998;
     outline: none;
     background: transparent;
-    color: #fff;
+    
     
 }
 .custom-class input[type=email]{

@@ -33,17 +33,17 @@
                         {% csrf_token %}
                          
                        
-                        <input type="text" class="input-field custom-class" style="color: #0000;" name="username" id="username" placeholder=" User Name" required {{form.username}} 
+                        <input type="text" class="input-field custom-class" style="outline: none;" name="username" id="username" placeholder=" User Name" required {{form.username}} 
                     
                         <span id="username_error_message" class="error"></span>
 
-                        <input type="email" class="input-field custom-class" name="email" id="email" placeholder="Email"  style="outline: none;" {{form.email}}
+                        <input type="email" class="input-field custom-class" name="email" id="email" placeholder="Email"  style="outline: none;" {{form.email}} 
                         <span id="email_error_message" class="error"></span>
 
-                        <input type="password" class="input-field custom-class" id="password1" name="password1" placeholder="Password" style="outline: none;" required {{form.password1}}
+                        <input type="password" class="input-field custom-class" id="password1" name="password1" placeholder="Password" style="outline: none;" required {{form.password1}} 
                         <span id="password1_error_message" class="error"></span>
                         
-                        <input type="password" class="input-field custom-class" id="password1" name="password2" placeholder="Confirm Password" style="outline: none;" required {{form.password2}}
+                        <input type="password" class="input-field custom-class" id="password1" name="password2" placeholder="Confirm Password" style="outline: none;" required {{form.password2}} 
 
                         
 

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Profile
+from .models import Post, Profile, Request, UserPlan
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -27,3 +27,14 @@ class ProfileUpdateForm(forms.ModelForm):
                 fields = ['username', 'email', 'fname', 'cname' , 'office' , 'phone' , 'insta', 'telegram', 'profile_picture']
 
 
+class RequestForm(forms.ModelForm):
+       class Meta:
+           model = Request
+           fields = ['name', 'email', 'asking', 'phone', 'describe']
+
+
+class AgentVerificationForm(forms.ModelForm):
+    class Meta:
+        model = UserPlan
+        fields = ['verification_document']            
+       

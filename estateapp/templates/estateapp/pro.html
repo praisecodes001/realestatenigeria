@@ -13,18 +13,24 @@
     </head>   
     <body>
     <div class="header">  
-        <nav id b ="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, aqua , brown); ">
-          <label class="logo">Real Estate Nigeria<span>(REN)</span> </label>
+        <nav id b ="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+          {% if plan_name != "Starter" %}
+            <label class="logo">{{request.user}} </label>
+            {% else %}
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+
+            {% endif %}
             <ul class="nav-links">
-                <li><a href="/home/" class="#">Home</a></li>
-                <li><a href="/Listings/" class="#">Listings</a></li>
-                <li><a href="/howitworks/" class="#">How it Works</a></li>
-                <li><a href="/contact/" class="#">Contact Us</a></li>
+                    <li><a href="/personal/" class="#">My Listings</a></li>
+                  <li><a href="/profile/" class="#">Profile</a></li>
+                  <li><a href="/dashboard/" >Dashboard</a></li>
+                  <li><a href="/pro/" class="active">Add Property</a></li>
+                  <li><a href="/subscription/" class="#">Subscriptions</a></li>
             </ul>
             <a href="{% url 'logout' %}" class="register-btn">Logout</a>
             <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
         </nav>
-        <h1>Add Your Property!!</h1>
+        <h1>Add your property!</h1>
     <div class="pro-con">
         {% if user.is_authenticated %}
     <!-- Form code -->
@@ -135,7 +141,7 @@
                                     </div>
                                    <div class="dropdown">
                                     <h5>Bathrooms</h5>
-                                       <select id="select4" name="bathroom">    
+                                       <select id="select5" name="bathroom">    
                                         <option> 1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -293,6 +299,7 @@
     <button type="submit" class="btn2"> Post &#859;</button>
 
          </form>
+
     </div>
     </div>
    
@@ -373,17 +380,22 @@ if(document.getElementById("message").value == ""){
         function disableSelect2(){
             var select1 = document.getElementById("select1");
             var select2 = document.getElementById("select2");
+            var select3 = document.getElementById("select3");
+            var select4 = document.getElementById("select4");
+            var select5 = document.getElementById("select5");
     
 
             if (select1.value === "land"){
                 select2.disabled = true;
                 select3.disabled = true;
                 select4.disabled = true;
+                select5.disabled = true;
 
             }else {
               select2.disabled = false;
               select3.disabled = false;
               select4.disabled = false;
+              select5.disabled = false;
   }         
         }
     </script>

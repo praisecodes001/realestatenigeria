@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
+    background-size: cover;
+}
+.hero {
+    height: 100%;
+    width: 100%; 
+    background-image: linear-gradient(rgba(12, 0, 0, 0.932),rgba(0, 0, 0, 0.842)),url(image/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+/* Form box */
+.form-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;  
+    position: relative;
+    margin: 4% auto;
+    margin-top: 50px;
+}
+
+/* Heading */
+.form-box h2  {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-box h3  {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* Input group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input field */
+.input-field {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-field:focus {
+    border-color: #007bff;
+}
+
+/* Submit button */
+button[type="submit"] {
+    padding: 12px;
+    background: linear-gradient(to left, white, green);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to left, green, white);
+
+}

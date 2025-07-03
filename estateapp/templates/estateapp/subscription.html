@@ -11,7 +11,14 @@
 
       <div class="header">  
         <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
-          <label class="logo"><a href=""> Real Estate Nigeria<span>(REN)</span></a></label>
+            
+            {% if plan_name != "Starter" and plan_name != "No Plan" %}
+
+            <label class="logo">{{request.user}} </label>
+            {% else %}
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+
+            {% endif %}
             <ul class="nav-links">
                 <li><a href="/dashboard/" >Dashboard</a></li>
                 <li><a href="/personal/" class="#">My Listings</a></li>
@@ -23,55 +30,84 @@
             <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
            
         </nav>
-    
+     {% if user.userplan.is_paid_active %}
+        {% if user.userplan.is_paid_active and user.userplan.expiry_date > now %}
+            <p style="color: green; text-align: center;">Hi {{request.user}},Your current subscription ({{ plan_name }}) is active until{{ profile.expiry_date|date:"F j, Y" }}.</p>
+            <p style="color: green; text-align: center;">You cannot switch plans until it expires.</p>
+        {% else %}
+            <div class="alert alert-danger">
+                Your subscription has expired. Please upgrade to continue using our platform.
+            </div>
 
-          
-   
+            <!-- Show available subscription plans -->
+            <div class="container mt-5">
+                <h2 class="text-center">Choose Your Subscription Plan</h2>
+                <div class="price-row">
+                    {% for plan in plans %}
+                        <div class="price-col">
+                            <div class="card shadow-lg p-3 mb-4">
+                                <div class="card-body ">
+                                    <p class="card-title">{{ plan.name }}</p>
+                                    <h4 class="text-primary">₦{{ plan.price }}</h4>
+                                    <h5>Duration: {{ plan.duration }} days</h5>
+                                    
+                                    <h5>Maximum of {{ plan.post_limit }} properties</h5>
+                                    <h5>{{ plan.call_hours }} hrs call from clients</h5>
+                                    <h6>{{ plan.feature }}</h6>
+                                    <h6>{{ plan.feature1|default:"" }}</h6>
+                                    <h6>{{ plan.feature2|default:"" }}</h6>
+                                    <h6>{{ plan.feature3|default:"" }}</h6>
+                                    <h6>{{ plan.feature4|default:"" }}</h6>
+                                    <h6>{{ plan.feature5|default:"" }}</h6>
 
-        <div class="container mt-5">
-          <h2 class="text-center">Choose Your Subscription Plan</h2>
-          
-          <div class="price-row">
-              {% for plan in plans %}
-              <div class="price-col">
-                  <div class="card shadow-lg p-3 mb-4">
-                      <div class="card-body text-center">
-                          <p class="card-title">{{ plan.name }}</p>
-                          <h4 class="text-primary">₦{{ plan.price }}</h4>
-                          <h5>Duration: {{ plan.duration }}</h5>
-                          {% for feature in plan.features %}
-                          <h6>{{ feature }}</h6>
-                          {% endfor %}
-                          <form method="POST" action="{% url 'process_payment' %}">
-                              {% csrf_token %}
-                              <input type="hidden" name="plan" value="{{ plan.id }}">
-                              <button type="submit" class="btn btn-success">Subscribe</button>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
-              {% if user_subscription %}
-    {% if user_subscription.is_on_free_plan %}
-        <div class="alert alert-info">
-            You are currently on the <strong>Free Plan</strong>. Your subscription will expire on {{ user_subscription.expiry_date|date:"F d, Y" }}. Upgrade now to continue enjoying our services.
-        </div>
-    {% elif user_subscription.has_expired %}
-        <div class="alert alert-danger">
-            Your subscription has expired. Please upgrade to continue using our platform.
-        </div>
+                                    <form method="POST" action="{% url 'initialize_payment' %}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="plan_id" value="{{ plan.id }}">
+                                        <button type="submit" class="btn btn-success">Subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
     {% else %}
-        <div class="alert alert-success">
-            You are currently on the <strong>{{ user_subscription.plan.name }}</strong> plan. Your subscription expires on {{ user_subscription.expiry_date|date:"F d, Y" }}.
+        <div class="alert alert-warning" style="display:none;">
+            You do not have an active subscription. Please choose a plan to continue.
+        </div>
+
+        <!-- Show available subscription plans -->
+        <div class="container mt-5">
+            <h2 class="text-center">Choose Your Subscription Plan</h2>
+            <div class="price-row">
+                {% for plan in plans %}
+                    <div class="price-col">
+                        <div class="card shadow-lg p-3 mb-4">
+                            <div class="card-body text-center">
+                                <p class="card-title">{{ plan.name }}</p>
+                                <h4 class="text-primary">₦{{ plan.price }}</h4>
+                                <h5>Duration: {{ plan.duration }} days</h5>
+                                <h5>Maximum of {{ plan.post_limit }} properties</h5>
+                                <h5>{{ plan.call_hours }} hrs call from clients</h5>
+                                <h6>{{ plan.feature }}</h6>
+                                <h6>{{ plan.feature1|default:"" }}</h6>
+                                <h6>{{ plan.feature2|default:"" }}</h6>
+                                <h6>{{ plan.feature3|default:"" }}</h6>
+                                <h6>{{ plan.feature4|default:"" }}</h6>
+
+                                <form method="POST" action="{% url 'initialize_payment' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="plan_id" value="{{ plan.id }}">
+                                    <button type="submit" class="btn btn-success">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     {% endif %}
-{% else %}
-    <div class="alert alert-warning">
-        You do not have an active subscription. Please choose a plan to continue.
-    </div>
-{% endif %}
-          </div>
-      </div>
-    </div>
+</div>
     </body>
 </html>

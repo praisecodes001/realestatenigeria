@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed</title>
+    
+    <link rel="stylesheet" href="{% static 'estateapp/done.css' %}">
+    <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %}">
+</head>
+<body>
+    <div class="header">
+        <nav id="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, white, green); ">
+      
+        </nav>
+        
+    <div class="container">
+        <div class="row">
+            <div class="col image-col">
+                <img src="{% static 'estateapp/image/thumbs up.png' %}" alt="Thumbs Up" style="max-width: 100%;">
+            </div>
+
+            <div class="col-1">
+                <i class="fa-solid fa-circle-xmark" style="color: red; font-size: 4rem;"></i>
+                <h1 style="color: red;">Payment Failed</h1>
+                <h3>Oops! Something went wrong.</h3>
+                
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Please try again later or contact support.</p>
+                {% endif %}
+
+                <a href="{% url 'subscription' %}" class="btn btn-primary">← Back to Subscription</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>

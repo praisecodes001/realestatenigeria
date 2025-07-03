@@ -20,6 +20,7 @@
                 <li><a href="/home" class="active">Home</a></li>
                 <li><a href="/Listings/" class="#">Listings</a></li>
                 <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/request/" class="#">Post a request</a></li>
                 <li><a href="/contact/" class="#">Contact Us</a></li>
                 <a href="/registration-path/" target="_blank"  class="register-btn"  onclick="return confirm('Only Agents are allowed to register');">Register Now</a>
                 <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
@@ -64,77 +65,20 @@
     <div class="container-2">
         <h2 class="sub-title">Exclusives</h2>
         <div class="exclusives">
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 1.jpg' %}"></a>
-            <span>
-                <h3>5 unit of 5 Bedroom fully detached with BQ</h3>
-                <p>N20,000,000</p>
-            </span>
+            {% for post in random_posts %}
+            <div class="property-card">
+                <a href="{% url 'post-detail' post.id %}">
+                  <div class="image-wrapper">
+                    <img src="{{ post.thumb.url }}">
+                <div class="overlay-text">
+                <h3>{{ post.title }}</h3>
+                <p>₦{{ post.currencyfield }}</p>
+                  </div>  
+                
             </div>
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 1.jpg' %}"></a>
-                <span>
-                    <h3>7 Bedroom flat for sale </h3>
-                    <p>N34,300,000</p>
-                </span>
+            </a>
             </div>
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 3.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 3.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/Exclusive 1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-            
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/image1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-             <div>
-                 <a href="House.html"><img src="{% static 'estateapp/image/image1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
-             <div>
-                 <a href="House.html"><img src="{% static 'estateapp/image/image1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div> 
-            <div>
-                <a href="House.html"><img src="{% static 'estateapp/image/image1.jpg' %}"></a>
-                <span>
-                    <h3>Yankee</h3>
-                    <p>N300,000</p>
-                </span>
-            </div>
+           {% endfor %}
         </div>
         <h2 class="sub-title">Trending Places</h2>
         <div class="trending">
@@ -161,7 +105,7 @@
         </div>
         
         </div>
-        <button class="btn">See More</button>
+      
 <!---Affiliate----->
         <h2 class="sub-title">How it works</h2>
         <div class="border-box"></div>
@@ -180,40 +124,18 @@
             </p>
             <a href="/howitworks/" class="cta-btn">Know More</a>
         </div>
-        <a href="/registration-path/" class="start-btn">Start Making Money with Real Estate Nigeria <span>(REN)</span></a>
-        
+       
         <!-------Agent-->
         <h2 class="sub-title">Agent</h2>
         <div class="border-box"></div>
         <div class="cta">
             <h3>Are you An Agent?</h3>
    <p>Do you have a high taste clients and don't have what to satisfy them? Are you looking for a paying transaction to establish yourself as an Agent? Real Estate Nigeria got you covered!!!</p>
-            <a href="Afilliate Programme.html" class="cta-btn">Register As An Agent</a>
+            <a href="/registration-path/" class="cta-btn">Register As An Agent</a>
         </div>
 
-        <!----Owner-->
-        <h2 class="sub-title">Owner</h2>
-        <div class="border-box"></div>
-        <div class="cta-1">
-            <h3>Own a property?</h3>
-   <p>Ready to cash in on your property? Want the best deal ever on your property ? Real Estate Nigeria has got you covered.</p>
-            <a href="Afilliate Programme.html" class="cta-btn">Register As A property owner</a>
-        </div>
-
-        <div class="app">
-         <h2>Download our app</h2>
-         <img src="{% static 'estateapp/image/Gold_Real_Estate_Download_Our_App_Instagram_Post__1_-removebg-preview.png' %}">
-             <div class="button-row">
-                <div class="nom">
-   <button class="android"><img src="{% static 'estateapp/image/Google-Play-Feature-Image-removebg-preview.png' %}"><a href=""> <p>Andriod Store</p></a></button>
-                </div>
+      
         
-                
-                <div class="nom">
-  <button class="apple"><img src="{% static 'estateapp/image/apple.png' %}"><a href=""> <p>Andriod Store</p></a></button>
-                </div>
-             </div>
-        </div>
 
 
 

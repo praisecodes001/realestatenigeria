@@ -23,7 +23,14 @@ label.logo{
     line-height: 30px;
     font-weight: bold;
 }
-
+.register-btn{
+    background: #fff;
+    color:#000;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+}
 label.logo span{
     font-size: 12px;
     font-weight: 200;
@@ -71,6 +78,7 @@ p{
     margin-left: 25%;
     margin-top: 10px;
     height: 40px;
+    cursor: pointer;
     margin-bottom: 20px;
    font-size: 20px;
    background-color: gray;
@@ -192,6 +200,20 @@ h2 span{
 .house a{ 
     text-decoration: none;
     color: #000;
+}
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    background: #000;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
 }
 .house-img{
     flex-basis: 40%;
@@ -331,12 +353,12 @@ h2 span{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(240, 8, 8);  
+    background: rgb(0, 255, 21);  
 }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(216, 27, 27); 
+    background: rgb(52, 235, 61); 
     
   }
 .notice-row p{

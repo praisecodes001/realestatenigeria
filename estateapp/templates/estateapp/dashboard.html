@@ -12,37 +12,77 @@
     <body>
     <div class="header">  
         <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+            {% if plan_name != "Starter" and plan_name != "No Plan" %}
+            <label class="logo">{{request.user}} </label>
+            {% else %}
             <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+
+            {% endif %}
             <ul class="nav-links">
+                <li><a href="/dashboard/" class="active">Dashboard</a></li>
                 <li><a href="/personal/" class="#">My Listings</a></li>
                 <li><a href="profile/" class="#">Profile</a></li>
                 <li><a href="/pro/" class="#">Add Property</a></li>
+                
+                {% if plan_name != "Starter" and plan_name != "No Plan" %}
+                <li><a href="/viewrequest/" class="#">View Request</a></li>
+                {% endif %}
+
+                
+    {% if profile.is_paid_active %}
+            <li><a href="/payment_history/" class="#">Payments</a></li>          
+    {% else %}
+                           
+    {% endif %}
+
+               
                 <li><a href="/subscription/" class="#">Subscriptions</a></li>
-                <li><a href="{% url 'logout' %}" class="">Log-out</a></li>
                 <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
                 <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
               
             </ul>
-           
+           <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
             
         </nav>
-        
-         
-       
-
                 <div class="container">
-                  <h2>Welcome  <span>{{request.user}}</span>! 🚀 Ready to close more deals today?</h2>
-                    <p>You haven't made any posts yet!</p>
+                  <h2> 🚀 Welcome  <span>{{request.user}}</span>!</h2>
+                {% if user.is_authenticated  %} 
+                    {% if post_count > 0  %} 
+                        <p>You have {{ post_count }} {{ post_count | pluralize:"property,properties" }}.</p>
+
+                    {% else %}
+                        <p>You haven't made any posts yet!</p>
+                    {% endif %}
+                {% endif %}
+
+                    <a href="/dashboard/profile/">
                     <button class="add">
-                        <a href="/dashboard/profile/">
+                        
                             <i class="fa-solid fa-house-medical-circle-check"></i> Edit Your Profile
-                        </a>
                     </button>
+                        </a>
                     
                 </div>
  
-        
-    
+
+
+
+    {% if profile.is_paid_active %}
+    <div class="alert alert-success" style="color: green; text-align: center;">
+
+     {{ plan_name }} Subscription Activated!! It expires on: {{ profile.expiry_date|date:"F j, Y" }}
+    </div>
+{% else %}
+    <div class="alert alert-warning"  style="color: red; text-align: center;">
+        No active subscription. Please subscribe to a plan.
+    </div>
+{% endif %}
+
+{% if not profile.is_verified %}
+<a href="{% url 'verifyagent' %}">Verify My account</a>
+{% else %}
+<span class="text-success">Your are verified</span>
+{% endif %}
         <script src="index.js"></script>
         
 <script>

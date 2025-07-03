@@ -68,7 +68,7 @@ nav#navBar.hidemenu.fa-bars :before{
 /*--------contact agent---------*/
 .contact-agent .container{
     margin: 30px 30px;
-    background: linear-gradient(to left, aqua, violet);;
+   background: linear-gradient(to left, white, green);
     box-shadow: 0 0 30px rgba(0,0,0,0.3);
     border-radius: 8px;
     display: flex;

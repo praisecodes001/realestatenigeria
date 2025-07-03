@@ -24,7 +24,7 @@
                 <div class="form-box">
                     <div class="button-box">
                         <div id="btn"></div>
-                           <button type="button" class="toggle-btn" > Register</button>
+                           <button type="button" class="toggle-btn" > Real Estate Nigeria</button>
                     </div> 
                 
     
@@ -33,7 +33,7 @@
                         {% csrf_token %}
                          
                        
-                        <input type="text" class="input-field custom-class" style="outline: none;" name="username" id="username" placeholder=" User Name" required {{form.username}} 
+                        <input type="text" class="input-field custom-class" style="outline: none;" name="username" id="username" placeholder="Company Name" required {{form.username}} 
                     
                         <span id="username_error_message" class="error"></span>
 
@@ -48,7 +48,7 @@
                         
 
 
-                        <p>Read carefully the <a href="Readme.md" target="_blank">Privacy & Conditions</a></p>
+                        <p>Read carefully the <a href="" target="_blank">Privacy & Conditions</a></p>
                         <input type="checkbox" class="check-box"><span>I agree to the terms & conditions </span>
                         <button type="submit" class="submit-btn" name="Create User" >Register</button>
                          {{form.errors}}

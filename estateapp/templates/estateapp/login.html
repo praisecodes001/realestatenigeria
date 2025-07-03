@@ -15,16 +15,16 @@
     <div class="form-box">
          <div class="button-box">
             <div id="btn"></div>
-            <button type="button" class="toggle-btn" onclick="login()"> Log In</button>
+            <button type="button" class="toggle-btn" onclick="login()">Real Estate Nigeria</button>
 
          </div>
          <form id="login" class="input-group" action="" method="POST">
 
             {% csrf_token %}
             
-            <input type="text" class="input-field" id="enter" placeholder="Username" name="username" required>
+            <input type="text" class="input-field" id="enter" placeholder="Company Name" name="username" required>
             <input type="password" class="input-field" id="enter" placeholder="Password" name="password" required>
-            <input type="checkbox" class="check-box"><span>Remember Password</span>
+           <p> <a href="{% url 'password_reset' %}"> Forgot Password?</a></p>
             <button type="submit" class="submit-btn" value="Login" >Log In</button>
 
             {% for messages in messages %}

@@ -9,16 +9,20 @@
     </head>
 <body>
     <div class="header">    
-        <nav id="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, aqua , brown); ">
+        <nav id="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, white, green); ">
         <label class="logo">Real Estate Nigeria <span>(REN)</span></label>
         <ul class="nav-links">
-            <li><a href="/home/">Home</a></li>
-            <li><a href="/Listings/" >Listings</a></li>
-            <li><a href="/howitworks/" >How it works</a></li>
-            <li><a href="#" class="active" >Contact Us</a></li>
+             <li><a href="/home/" class="#">Home</a></li>
+                <li><a href="/Listings/" class="#">Listings</a></li>
+                <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/request/" class="#">Post a request</a></li>
+
+                <li><a href="/contact/" class="active">Contact Us</a></li>
+                <a href="/registration-path/" target="_blank"  class="register-btn"  onclick="return confirm('Only Agents are allowed to register');">Register Now</a>
+                <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
         </ul>
       
-        <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
     </nav>
      <div class="contact-agent">
         <h2>Contact Us</h2>

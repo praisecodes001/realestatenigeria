@@ -19,6 +19,8 @@
                 <li><a href="/home/" class="#">Home</a></li>
                 <li><a href="/Listings/" class="active">Listings</a></li>
                 <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/request/" class="#">Post a request</a></li>
+
                 <li><a href="/contact/" class="#">Contact Us</a></li>
                 <a href="/registration-path/" target="_blank"  class="register-btn"  onclick="return confirm('Only Agents are allowed to register');">Register Now</a>
                 <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
@@ -32,12 +34,12 @@
    <div class="list-container">
     <div class="left-col">
         <a href="/Listings/">Refresh Page</a>
-                     <p>{{ posts|length }} Options</p>
+            <p>{{ posts|length }} Options</p>
                      
          <h1>Top Listings</h1>
         
         {% for post in posts %} 
-         <div class="house">
+        <div class="house">
              <div class="house-img">
                  <img src="{{ post.thumb.url|default:'#' }}" alt="">
                  <p class="text-content">{{ post.category|default:"Unknown Category" }}</p>
@@ -51,12 +53,17 @@
                  {% else %}
                      <h3>{{ post.short|default:"No Short Description" }}</h3>
                  {% endif %}
-     
-                 <p> 
+
+
+                  {% if post.get_building_display != "land" %}
+                           <p> 
                      <i class="fa-solid fa-bed"></i> {{ post.bedroom|default:0 }} Bedrooms |
                      <i class="fa-solid fa-bath"></i> {{ post.bathroom|default:0 }} Bathrooms  |
                      <i class="fa-solid fa-toilet"></i> {{ post.toilet|default:0 }} Toilets   
                  </p>
+                            {% endif %}
+                
+                 
      
                  <i class="fa-solid fa-star"></i>
                  <i class="fa-solid fa-star"></i>
@@ -75,14 +82,14 @@
                  
                  <ul>
                      <li><a href="https://wa.me/{{ profile.phone }}"><i class="fa-brands fa-whatsapp"></i></a> <p>Whatsapp</p></li>
-                     <li><a href="tel:+2347064453868"><i class="fa-solid fa-phone"></i></a><p>Phone</p></li>
-                     <li><i class="fa-brands fa-telegram"></i> <p>Telegram</p></li>
-                     <li><i class="fa-brands fa-instagram"></i> <p>Instagram</p></li>
+                     <li><a href="tel:+{{ profile.phone}}"><i class="fa-solid fa-phone"></i></a><p>Phone</p></li>
+                     <li><i class="{{profile.telegram}}"></i> <p>Telegram</p></li>
+                     <li><i class="{{profile.insta}}"></i> <p>Instagram</p></li>
                  </ul> 
                 
              </div>
          </div>
-   {% endfor%}
+        {% endfor%}
      
       
 
@@ -104,17 +111,7 @@
                <hr class="line2">      
             </div>
 
-      <div class="pagination">
-         <a href="#"><img src="image/arrow.png"></a>
-          <span class="current">1</span>
-          <span><a href="Listings.html">2</a></span>
-          <span><a href="Listings.html">3</a></span>
-          <span><a href="Listings.html">4</a></span>
-          <span><a href="Listings.html">5</a></span>
-          <span>&middot;&middot;&middot;&middot;</span>
-          <span>20</span>
-          <img src="image/arrow.png" class="right-arrow"> 
-      </div>
+    
         </div>
         <div class="footer">
             <a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>

@@ -10,19 +10,26 @@
     </head>
     <body>
         <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
-          <label class="logo">Real Estate Nigeria<span>(REN)</span></label>
+          {% if plan_name != "Starter" %}
+            <label class="logo">{{request.user}} </label>
+            {% else %}
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+
+            {% endif %}
             <ul class="nav-links">
                 <li><a href="" class="active">My Listings</a></li>
+                <li><a href="/dashboard/" class="#">Dashboard</a></li>
                 <li><a href="/dashboard/profile/" class="#">Profile</a></li>
                 <li><a href="/pro" class="#">Add Property</a></li>
                 <li><a href="/subscription/" class="#">Subscriptions</a></li>
-                <li><a href="{% url 'logout' %}" class="">Log-out</a></li>
+
                 <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
                 <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
               
             </ul>
            
-            <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+            <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
+
         </nav>
         <div class="container">
             <div class="list-container">
@@ -35,14 +42,21 @@
                      <div class="house">
                         <div class="house-img">
                             <img src="{{ post.thumb.url }}" alt="">
-                            <p class="text-content">{{ post.category|default:"Unknown Category" }}</p>
+                            <p class="text-content">{{ post.category }}</p>
                             
                         </div>
                           
                         <div class="house-info">
                             <p>{{ post.title }}</p>
                             <a href="{% url 'post-detail' post.id %}"><h3>{{ post.short }}</h3></a>
-                            <p> <i class="fa-solid fa-bed"></i> {{ post.bedroom }} Bedrooms <i class="fa-solid fa-bath"></i> {{ post.bathroom }} Bathrooms  <i class="fa-solid fa-toilet"></i>  {{ post.toilet }} Toilets</p>
+
+                            {% if post.get_building_display != "land" %}
+                            <p> <i class="fa-solid fa-bed"></i> {{ post.bedroom }} Bedrooms 
+                                <i class="fa-solid fa-bath"></i> {{ post.bathroom }} Bathrooms  
+                                <i class="fa-solid fa-toilet"></i>  {{ post.toilet }} Toilets
+                            </p>
+
+                            {% endif %}
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>

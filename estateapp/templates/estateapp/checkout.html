@@ -1,0 +1,17 @@
+{% load static %}
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+  let handler = PaystackPop.setup({
+    key: "{{ public_key }}",
+    email: "{{ email }}",
+    amount: {{ amount }},
+    ref: "{{ reference }}",
+    callback: function(response){
+      window.location.href = "/verify_payment?reference=" + response.reference;
+    },
+    onClose: function(){
+      alert('Transaction cancelled');
+    }
+  });
+  handler.openIframe();
+</script>

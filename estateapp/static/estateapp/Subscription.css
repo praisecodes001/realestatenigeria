@@ -73,64 +73,79 @@ label.logo span{
     padding: 50px 0;
     text-align: center;
 }
-.price-row{
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.price-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
 }
-.price-col{
-    background: black;
-   padding: 10% 15%;
-   border-radius: 10px;
-   color: #fff;
-   text-align: center;
-   margin-right: 30px;
-   margin-top: 40px;
-   cursor: pointer;
-   transition: .5s;
-}
-.price-col a{
-    text-decoration: none;
-}
-.price-col a p{
-    color: #ff0000;
-}
-.price-col p{
-  font-size: 29px;
-  font-weight: 600;
-  color: #ff0000;
 
+/* Each subscription card column */
+.price-col {
+    flex: 1 1 300px;
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
 
+.price-col:hover {
+    transform: translateY(-10px);
 }
-.price-col a h3{
-    color: #ff0000;
+
+/* Card styling */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease-in-out;
 }
-.price-col h3{
-    font-size: 25px;
-    margin: 20px 0 40px;
+
+.card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Card body */
+.card-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.5rem;
     font-weight: 600;
-    color: #ff0000;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
-.price-col h3 span{
-    font-size: 16px;
-}
-.price-col ul{
-    text-align: left;
-    margin: 20px 0;
-    color: #ddd;
-    list-style: none;
-}
-.price-col ul li{
-    margin: 10px 0;
-    font-size: 15px;
-}
-.price-col ul li::before{
-    content: '\2022';
-    color: #e33058;
+
+/* Plan price */
+.card h4 {
+    font-size: 2rem;
     font-weight: bold;
-    margin-right: 8px;
+    color: #007bff;
+    margin: 0.5rem 0;
+}
+
+/* Plan details */
+.card h5, .card h6 {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.3rem 0;
+}
+
+
+
+.card .btn-success:hover {
+    background-color: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .price-row {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 .price-col button{
     width: 100%;
@@ -146,6 +161,10 @@ label.logo span{
 .price-col button:hover{
     background: linear-gradient(to right,white, green);
 }
+.details
+{
+    text-align:left;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 13px;
@@ -158,12 +177,12 @@ label.logo span{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(240, 8, 8);  
+    background: rgb(0, 255, 21);  
 }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(216, 27, 27); 
+    background: rgb(52, 235, 61); 
     
   }
 

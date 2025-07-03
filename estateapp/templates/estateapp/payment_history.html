@@ -4,13 +4,13 @@
     <head>
          <meta charset="viewport" content="width=device-width, initial-scale-1.0">
          <title>Subscription Page</title>
-         <link rel="stylesheet"  href= "{% static 'estateapp/Subscription.css'%}">
+         <link rel="stylesheet"  href= "{% static 'estateapp/payment.css'%}">
          
     </head>
     <body>
 
       <div class="header">  
-        <nav id="navBar" class="hidemenu fa-bars" style="background: linear-gradient(to left, aqua , brown); ">
+        <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
           <label class="logo"><a href=""> Real Estate Nigeria<span>(REN)</span></a></label>
             <ul class="nav-links">
                 <li><a href="/dashboard/" >Dashboard</a></li>
@@ -22,8 +22,9 @@
             <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
             <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
         </nav>
-        <div class="container mt-5">
-            <h2 class="text-center">Payment History</h2>
+        <div class="container ">
+
+            <h2 class="text-center" >Payment History</h2>
         
             {% if payments %}
             <table class="table table-striped mt-4">
@@ -32,6 +33,7 @@
                         <th>Date</th>
                         <th>Plan</th>
                         <th>Amount</th>
+    
                         <th>Reference</th>
                         <th>Status</th>
                     </tr>
@@ -39,10 +41,11 @@
                 <tbody>
                     {% for payment in payments %}
                     <tr>
-                        <td>{{ payment.date|date:"M d, Y" }}</td>
-                        <td>{{ payment.plan }}</td>
-                        <td>₦{{ payment.amount }}</td>
-                        <td>{{ payment.paystack_reference }}</td>
+                        <td>{{ payment.date_created|date:"M d, Y" }}</td>
+                        <td>{{ payment.price.name}}</td>
+                        <td>₦{{ payment.price.price }}</td>
+
+                        <td>{{ payment.reference }}</td>
                         <td class="{% if payment.status == 'success' %}text-success{% else %}text-danger{% endif %}">
                             {{ payment.status }}
                         </td>

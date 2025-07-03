@@ -1,21 +1,17 @@
 import requests
+
 from django.conf import settings
 
-def initialize_payment(user, amount, plan_name):
-    """
-    Initializes payment on Paystack and returns the payment link.
-    """
-    url = "https://api.paystack.co/transaction/initialize"
+def verify_payment(reference, amount=None):
+    url = f"https://api.paystack.co/transaction/verify/{reference}"
     headers = {
-        "Authorization": f"Bearer {settings.PAYSTACK_SECRET_KEY}",
-        "Content-Type": "application/json",
+        "Authorization": f"Bearer {settings.PAYSTACK_SECRET_KEY}"
     }
-    data = {
-        "email": user.email,
-        "amount": int(amount) * 100,  # Convert amount to kobo
-        "metadata": {"plan": plan_name},
-        "callback_url": "http://yourdomain.com/payment/verify/",  # Redirect after payment
-    }
-
-    response = requests.post(url, json=data, headers=headers)
-    return response.json()  # Returns Paystack's response
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        data = response.json()
+        if data['data']['status'] == 'success':
+            if amount and data['data']['amount'] != amount * 100:
+                return False
+            return True
+    return False

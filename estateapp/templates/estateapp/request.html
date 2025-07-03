@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale =1.0">
+     <title>Request</title>
+    <link rel="stylesheet" href= '{% static "estateapp/request.css"%}'>
+     <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
+     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+     <link rel="manifest" href="favicon_io/site.webmanifest">
+    </head>
+    <div class="header">
+        <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+            <ul class="nav-links">
+                <li><a href="/home" class="#">Home</a></li>
+                <li><a href="/Listings/" class="#">Listings</a></li>
+                <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/request/" class="active">Post a request</a></li>
+                <li><a href="/contact/" class="#">Contact Us</a></li>
+                <a href="/registration-path/" target="_blank"  class="register-btn"  onclick="return confirm('Only Agents are allowed to register');">Register Now</a>
+                <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
+            </ul>
+           
+        </nav>
+        <div class="form-container">
+                  <form action="" method="post">
+             <h2>Submit a Request</h2>
+
+        <form action="#" method="post">
+            {% csrf_token %}
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{ user.request.name }}" required >
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ user.request.email }}" required>
+
+            <label for="number">Phone Number(WhatsApp)</label >
+            <input type="text" name="phone" id="phone"  value="{{ user.request.phone }}" required>
+
+
+            <label for="category">Category</label>
+            <select id="category" name="asking" >
+                <option>Client</option>
+                <option>Agent</option>
+                
+            </select>
+             <label for="building">Type</label>
+            <select id="category" name="house" >
+                <option>Duplexes</option>
+                <option>Block Of Flats</option>
+                <option>Detached Duplexes</option>
+                <option>Bungalow</option>
+                <option>Mini Flats</option>
+                <option>Semi detached Duplexes</option>
+                
+            </select>
+
+            <label for="request">Request</label>
+            <textarea id="request" name="describe" rows="5" placeholder="Write your request here..." required></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+        </form>
+        </div>
+      
+    </div>
+   </html>

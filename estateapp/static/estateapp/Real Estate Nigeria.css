@@ -94,7 +94,7 @@ nav#navBar.fa-solid.fa-bars.hidemnu::before{
     width: 80%;
     margin: 30px auto;
     padding: 6px 10px 6px 30px;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 .search-box form{
     display: flex;
@@ -118,6 +118,7 @@ nav#navBar.fa-solid.fa-bars.hidemnu::before{
     border-radius: 20px;
     border: 0;
     outline: none;
+   
     cursor: pointer;
     color: black;
     font-size: 15px;
@@ -155,27 +156,49 @@ input::placeholder{
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 30px;
 }
-.exclusives div img{
-    width: 100%;
-    border-radius: 10px;
-}
-.exclusives div img:hover{
-    width: 100%;
-    border-radius: 30px;
-    transition: .5s;
-}
-.exclusives div{
-    position: relative;
-}
-.exclusives div span{
-    top:50%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: center;
-    color: #fff;
+
+
+
+.image-wrapper {
+  position: relative;
 }
 
+.image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+}
+
+.overlay-text h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.overlay-text p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #ffd700; /* gold/naira accent */
+}
+.property-card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.property-card a{
+    text-decoration:none;
+}
 
 /*------Trending Places-------*/
 .trending{
@@ -187,6 +210,7 @@ input::placeholder{
 .trending div img{
     width: 100%;
     border-radius: 10px;
+    object-fit: cover;
 }
 .trending div img:hover {
     border-radius: 10px;
@@ -216,42 +240,47 @@ input::placeholder{
 }
 /*----------call to action -------*/
 .cta{
-    margin: 80px 0;
-    background-image: linear-gradient(to right, #3f2321, transparent),url(image/landscape.png);
-    background-position: center;
-    border-radius: 10px;
-    padding: 5%;
-    color: #fff;
-    cursor: pointer;
+   background: #f9f9f9;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
 }
-.cta h3{
-    font-size: 4vw;
-    line-height: 5.5vw;
-    font-weight: 500;
+
+.cta h3 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 15px;
 }
-.cta p{
-    font-size: 18px;
-    margin: 10px 0;
+
+.cta p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
-.cta-btn{
-    background: linear-gradient(to left, white, green);
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 10px;
-    margin-top: 20px;
-    display: inline-block;
+
+.cta-btn {
+  display: inline-block;
+  background-color: #006400;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-btn:hover {
+  background-color: #004d00;
 }
 /*----owner----*/
 .cta-1{
-    margin: 80px 0;
-    background-image: linear-gradient(to right, #3f2321, transparent),url(image/owner.png);
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    padding: 5%;
-    color: #fff;
-    cursor: pointer;
+ background: #f9f9f9;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .cta .overlay {
@@ -277,22 +306,22 @@ input::placeholder{
 }
 
 .cta-1 h3{
-    font-size: 4vw;
-    line-height: 5.5vw;
-    font-weight: 500;
+     font-size: 22px;
+  color: #222;
+  margin-bottom: 15px;
 }
 .cta-1 p{
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 16px;
+  margin-bottom: 20px;
 }
 .cta-1-btn{
-    background: linear-gradient(to left, white, green);
-    color: #fff;
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 10px;
-    margin-top: 20px;
     display: inline-block;
+  background-color: #006400;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
 }
 /*----------Travellers Stories-- -------*/
 h2{
@@ -339,26 +368,26 @@ h2{
 }
 .border-box{
     width: 14%;
-    background-color: darkgoldenrod;
+    background-color: rgb(12, 226, 47);
     height: 5px;
     margin-top: -10px;
     margin-left: 27px;
 }
 
 /*----about-msg----*/
-.about-msg{
-    text-align: center;
-    margin: 80px 0;
-    color: #333;
-    font-size: 17px;
+.about-msg {
+  background-color: #e0f0e0;
+  padding: 40px 5%;
+  text-align: center;
 }
-.about-msg h2{
-    font-size: 30px;
-    margin-bottom: 30px;
-    font-weight: 500;
+
+.about-msg h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
 }
-.about-msg p span{
-    font-size: 15px;
+
+.about-msg span {
+  color: #006400;
 }
 
 /*----P--------*/
@@ -520,12 +549,12 @@ h2{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(240, 8, 8);  
+    background: rgb(0, 255, 21);  
 }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(216, 27, 27); 
+    background: rgb(52, 235, 61); 
     
   }
 /*---------for small screen devices-------*/

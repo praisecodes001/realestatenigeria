@@ -14,34 +14,31 @@
     
      <div class="header">
         <nav id="navBar" class="fa-bars" style="background: linear-gradient(to left, white, green); ">
-            <label class="logo"> <a href="/home/">Real Estate Nigeria<span>(REN)</span></a></label>
+
+            {% if plan_name != "Starter" and plan_name != "No Plan" %}
+            <label class="logo">{{request.user}} </label>
+            {% else %}
+            <label class="logo">Real Estate Nigeria <span>(REN)</span> </label>
+            {% endif %}
               <ul class="nav-links">
                   <li><a href="/personal/" class="#">My Listings</a></li>
                   <li><a href="#" class="active">Profile</a></li>
-                  <li><a href="/dashboard/" >Dashbord</a></li>
+                  <li><a href="/dashboard/" >Dashboard</a></li>
                   <li><a href="/pro/" class="#">Add Property</a></li>
                   <li><a href="/subscription" class="#">Subscriptions</a></li>
-                  <li><a href="{% url 'logout' %}" class="">Log-out</a></li>
+                
                   <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
                 <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
                 
               </ul>
              
-              
+              <a href="{% url 'logout' %}" class="register-btn">Log Out</a>
           </nav>
-
-          
-           
-           
-            
-       
-
-          
-              <h2 class="welcome">Your Profile</h2>
+    <h2 class="welcome">Your Profile</h2>
 
         
 
-         <div class="container">
+        <div class="container">
             <div id="profile-info">
                 {% if user.profile.profile_picture %}
                 <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" width="150" height="150">
@@ -67,48 +64,48 @@
         <input type="file" name="profile_picture"> 
         <div class="row">
             <div class="col-1">
-                <label for="fname">Full Name</label>
+                <h5 for="fname">Full Name</h5>
                 <input type="text" name="fname" id="fname" value="{{ user.profile.full_name }}">
             </div>
 
             <div class="col-2">
-                <label for="cname">Company Name</label>
+                <h5 for="cname">Company Name</h5>
                 <input type="text" name="cname" id="cname" value="{{ user.profile.company_name }}">
             </div>
         </div>
 
         <div class="row">
             <div class="col-3">
-                <label for="username">User Name</label>
+                <h5 for="username">User Name</h5>
                 <input type="text" name="username" value="{{ user.username }}" id="username" readonly>
             </div>
 
             <div class="col-4">
-                <label for="office">Office Address</label>
+                <h5 for="office">Office Address</h5>
                 <input type="text" name="office" id="office" value="{{ user.profile.office_address }}">
             </div>
         </div>
 
         <div class="row">
             <div class="col-5">
-                <label for="phone">Phone-Number(Whatsapp)</label>
+                <h5 for="phone">Phone-Number(Whatsapp)</h5>
                 <input type="text" name="phone" id="phone" value="{{ user.profile.phone }}">
             </div>
 
             <div class="col-6">
-                <label for="email">E-mail</label>
+                <h5 for="email">E-mail</h5>
                 <input type="email" name="email" value="{{ user.email }}" id="email" readonly>
             </div>
         </div>
 
         <div class="row">
             <div class="col-5">
-                <label for="insta">Instagram(Optional)</label>
+                <h5 for="insta">Instagram(Optional)</h5>
                 <input type="text" name="insta" id="insta" value="{{ user.profile.instagram }}">
             </div>
 
             <div class="col-6">
-                <label for="telegram">Telegram(Optional)</label>
+                <h5 for="telegram">Telegram(Optional)</h5>
                 <input type="text" name="telegram" id="telegram" value="{{ user.profile.telegram }}">
             </div>
         </div>
@@ -122,7 +119,7 @@
 
          </div>
 
-        <p class="change"><a href="">Change Password</a></p>
+        <p class="change"><a href="{% url 'password_reset' %}">Change Password</a></p>
         <button type="submit" class="save-btn">Save Changes</button>
     </form>
 

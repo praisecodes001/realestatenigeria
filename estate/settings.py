@@ -11,11 +11,14 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from pathlib import os
-import django_heroku
+from dotenv import load_dotenv
+
 import os
-import dj_database_url
-from decouple import config
+
+load_dotenv()
+PAYSTACK_PUBLIC_KEY = os.getenv('PAYSTACK_PUBLIC_KEY')
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'estateapp',
-    'multiupload',
+    
 ]
 
 MIDDLEWARE = [
@@ -57,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'estate.urls'
@@ -64,7 +68,7 @@ ROOT_URLCONF = 'estate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / "estateapp/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,9 +143,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-PAYSTACK_PUBLIC_KEY = "sk_live_f5cddd20a8d51521af301200f85206f3a1abfc46"
-PAYSTACK_SECRET_KEY = "pk_live_7b2b097fc2551107233505121eb334f06e8c2c30"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+#Praise this is for testing ooo, remeber to change it when you want to launch
 
 django_heroku.settings(locals())

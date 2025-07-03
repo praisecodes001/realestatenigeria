@@ -13,15 +13,18 @@
      <script src="https://kit.fontawesome.com/f9f6acc074.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <nav id="navBar" class="navbar-white"  style="background: linear-gradient(to left, aqua , brown); ">
+        <nav id="navBar" class="navbar-white"  style="background: linear-gradient(to left, white, green); ">
             <label class="logo">Real Estate Nigeria <span>(REN)</span></label>
             <ul class="nav-links">
-                <li><a href="/home/" class="">Home</a></li>
-                <li><a href="/Listings.html/" class="active">Listings</a></li>
-                <li><a href="#" class="">Affiliate</a></li>
-                <li><a href="/contact/" class="">Contact Us </a></li>
+                <li><a href="/home/" class="#">Home</a></li>
+                <li><a href="/Listings/" class="active">Listings</a></li>
+                <li><a href="/howitworks/" class="#">How it works</a></li>
+                <li><a href="/contact/" class="#">Contact Us</a></li>
+                <a href="/registration-path/" target="_blank"  class="register-btn"  onclick="return confirm('Only Agents are allowed to register');">Register Now</a>
+                <i class="fa-solid fa-bars" onclick="togglebtn()" ></i>
+                <i class="fa-solid fa-toggle-on" onclick="myFunction()"></i>
             </ul>
-            <i class="fas fa-bars" onclick="togglebtn()"></i>
+          
         </nav>
         <div class="container">
 
@@ -44,11 +47,11 @@
                     </div>
 
                     <div class="house-info">
-                        <p>{{ post.title }}</p>
-                        <a href="{% url 'post-detail' post.id %}"><h3>{{ post.short }}</h3></a>
+                        <p >{{ post.title }}</p>
+                        <a href="{% url 'post-detail' post.id %}" ><h3 class="title">{{ post.short }}</h3></a>
                         <p>
-                            <i class="fa-solid fa-bed"></i> {{ post.bedroom }} Bedrooms 
-                            <i class="fa-solid fa-bath"></i> {{ post.bathroom }} Bathrooms  
+                            <i class="fa-solid fa-bed"></i> {{ post.bedroom }} Bedrooms |
+                            <i class="fa-solid fa-bath"></i> {{ post.bathroom }} Bathrooms | 
                             <i class="fa-solid fa-toilet"></i> {{ post.toilet }} Toilets
                         </p>
 

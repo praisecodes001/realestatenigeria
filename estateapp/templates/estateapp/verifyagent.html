@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'estateapp/reset.css'%}">
+    <title>Password Reset Complete</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+        <h2>Agent Verification</h2>
+        <p>Status: {{ profile.verification_status|title}}</p>
+       
+    <form action="" class="input-group" method="post">
+        {% csrf_token %}
+        <input type="file" class="input-field custom-class" name="email" id="email" placeholder="Email"  style="outline: none;" >
+        <button type="submit">Submit Verification </button>
+          
+    </form>
+        </div>
+    </div>
+</body>
+</html>
